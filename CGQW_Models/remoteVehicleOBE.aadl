@@ -1,0 +1,17 @@
+package remoteVehicleOBE
+public
+	system remvehobe
+		
+		features
+			vehicleControlEventLocationMotion_out : out data port;
+			vehicleConttrolEventLocationMotion_in : in data port;
+			
+		flows
+			system_vcntrleventloc_source : flow source vehicleControlEventLocationMotion_out;
+			system_vcntrleventlocmot_sink : flow sink vehicleConttrolEventLocationMotion_in; 
+	end remvehobe;
+	
+	system implementation remvehobe.impl
+	end remvehobe.impl;
+	
+end remoteVehicleOBE;

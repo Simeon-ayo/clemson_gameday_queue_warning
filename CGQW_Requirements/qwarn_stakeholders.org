@@ -1,0 +1,32 @@
+organization qwarnsys
+stakeholder sqe [
+	full name "Software Quality Engineer"
+]
+
+stakeholder sys_integ [
+	full name "Systems Integrator"
+]
+
+stakeholder proj_mgr [
+	full name "Project Manager"
+]
+
+stakeholder sys_arch [
+	full name "Systems Architect"
+]
+stakeholder mobile_usr [
+	full name "End User"
+]
+
+stakeholder sw_dev [
+	full name "Software Developer"
+]
+
+stakeholder sw_test [
+	full name "Software Tester"
+]
+
+
+stakeholder driver [
+	full name "Driver"
+]

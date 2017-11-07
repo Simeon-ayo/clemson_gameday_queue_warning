@@ -1,0 +1,164 @@
+package roadsideEquipment
+public
+	system rodequip
+		features
+			queueWarningApplicationInformation_in : in data port;
+			vehicleSignageLocalData_in : in data port;
+			veEnvironmentData_in : in data port;
+			veControlEventLocationMotion_in : in data port;
+			trafficSituationDataEnvData_out: out data port;
+			queueWarnAppStatus_out : out data port;
+			trafSituationData_out : out data port;
+			qWarnInfo_out : out data port;
+			vehSignData_out : out data port;
+			
+		flows
+			system_qwarnapp_sink : flow sink queueWarningApplicationInformation_in;
+			system_vsignloc_sink : flow sink vehicleSignageLocalData_in;
+			system_venv_sink : flow sink veEnvironmentData_in;
+			system_vcntrlloc_sink : flow sink veControlEventLocationMotion_in;
+			system_trsituenv_source : flow source trafficSituationDataEnvData_out;
+			system_qwarnappstat_source : flow source queueWarnAppStatus_out;
+			system_trasitu_source : flow source trafSituationData_out;
+			system_qwarninfo_source : flow source qWarnInfo_out;
+			system_vsign_source : flow source vehSignData_out;
+	end rodequip;
+	
+	system implementation rodequip.impl
+		subcomponents
+			rse_qwarning : system rse_qwarning.impl;
+			rse_envmonitoring : system rse_envmonitoring.impl;
+			rse_trafmonitoring: system rse_trafmonitoring.impl;
+	end rodequip.impl;
+	
+	system rse_qwarning
+	end rse_qwarning;
+	system implementation rse_qwarning.impl
+		subcomponents
+			shortrange_info : process shortrange_info.impl;
+			vsafety_data : process vsafety_data.impl;
+	end rse_qwarning.impl;
+	
+	system rse_envmonitoring
+	end rse_envmonitoring;
+	system implementation rse_envmonitoring.impl
+		subcomponents
+			invehicle_signdata : process invehicle_signdata.impl;
+			rdside_safdata : process rdside_safdata.impl;
+			vemissons : process vemissions.impl;
+	end rse_envmonitoring.impl;
+	
+	system rse_trafmonitoring
+	end rse_trafmonitoring;
+	system implementation rse_trafmonitoring.impl
+		subcomponents
+			survdata : process survdata.impl;
+			inter_data: process inter_data.impl;
+	end rse_trafmonitoring.impl;
+	
+	process shortrange_info
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end shortrange_info;
+	process implementation shortrange_info.impl
+		subcomponents
+			distributeInfo : thread distributeInfo.impl;
+	end shortrange_info.impl;
+	
+	process vsafety_data
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end vsafety_data;
+	process implementation vsafety_data.impl
+		subcomponents
+			rdfreewaycond : thread rdfreewaycond.impl;
+	end vsafety_data.impl;
+	
+	process invehicle_signdata
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end invehicle_signdata;
+	process implementation invehicle_signdata.impl
+		subcomponents
+			createDataforVehicles : thread createDataforVehicles.impl;
+	end invehicle_signdata.impl;
+		
+	process rdside_safdata
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end rdside_safdata;
+	process implementation rdside_safdata.impl
+		subcomponents
+			opDataforRdSafety : thread opDataforRdSafety.impl;
+	end rdside_safdata.impl;
+	
+	process vemissions
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end vemissions;
+	process implementation vemissions.impl
+		subcomponents
+			collectVemssionsData : thread collectVemssionsData.impl;
+	end vemissions.impl;
+	
+	process survdata
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end survdata;
+	process implementation survdata.impl
+		subcomponents
+			disSurvData : thread disSurvData.impl;
+	end survdata.impl;
+	
+	process inter_data
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end inter_data;
+	process implementation inter_data.impl
+		subcomponents
+			intercomData : thread intercomData.impl;
+	end inter_data.impl;
+	
+	thread distributeInfo
+	end distributeInfo;
+	thread implementation distributeInfo.impl
+	end distributeInfo.impl;
+	
+	thread rdfreewaycond
+	end rdfreewaycond;
+	thread implementation rdfreewaycond.impl
+	end rdfreewaycond.impl;
+	
+	thread createDataforVehicles
+	end createDataforVehicles;
+	thread implementation createDataforVehicles.impl
+	end createDataforVehicles.impl;
+	
+	thread opDataforRdSafety
+	end opDataforRdSafety;
+	thread implementation opDataforRdSafety.impl
+	end opDataforRdSafety.impl;
+	
+	thread collectVemssionsData
+	end collectVemssionsData;
+	thread implementation collectVemssionsData.impl
+	end collectVemssionsData.impl;
+	
+	thread disSurvData
+	end disSurvData;
+	thread implementation disSurvData.impl
+	end disSurvData.impl;
+	
+	thread intercomData
+	end intercomData;
+	thread implementation intercomData.impl
+	end intercomData.impl;
+	
+end roadsideEquipment;

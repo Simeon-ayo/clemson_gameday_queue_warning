@@ -1,0 +1,16 @@
+package traffOppPersonel
+public
+	system trafOpPers
+		features
+			trafficOperationInput_out :out data port;
+			trafficOperationData_in : in data port;
+		
+		flows
+			trafopdata_sink : flow sink trafficOperationData_in;
+			trafopinp_source : flow source trafficOperationInput_out;
+	end trafOpPers;
+	
+	system implementation trafOpPers.impl
+	end trafOpPers.impl;
+	
+end traffOppPersonel;

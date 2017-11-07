@@ -1,0 +1,239 @@
+package vehicleOBE
+public
+	system vobe
+		features
+			queueWarningInformation_in:in data port;
+			vehicleSignageData_in : in data port;
+			vehicleControlEventLocationMotion_in : in data port;
+			driverInput_in : in data port;
+			hostVehicleStatuseDriverInputInformation_in : in data port;
+			vehEnvironmentData_out: out data port;
+			vehControlEventLocationMotionForSurv_out : out data port;
+			vehCtrlEventLocMotion2_out : out data port;
+			driverUpdates_out : out data port;
+			collisionWarnDriverUpdate_out : out data port;
+			
+		flows
+			system_qwarninfo_sink : flow sink queueWarningInformation_in;
+			system_vsign_sink : flow sink vehicleSignageData_in;
+			system_vcntrlloc_sink : flow sink vehicleControlEventLocationMotion_in;
+			system_dinput_sink : flow sink driverInput_in;
+			system_hvstatdrip_sink : flow sink hostVehicleStatuseDriverInputInformation_in;
+			system_venv_source : flow source vehEnvironmentData_out;
+			system_vcntrlloc_source : flow source vehControlEventLocationMotionForSurv_out;
+			system_vcntrllocmot2_source : flow source vehCtrlEventLocMotion2_out;
+			system_dupdate_source : flow source driverUpdates_out;
+			system_colwarndupdate_source : flow source collisionWarnDriverUpdate_out;
+	end vobe;
+	system implementation vobe.impl
+		subcomponents 
+			vqwarn:system vqwarn.impl;
+			vroadinforecpt:system vroadinforecpt.impl;
+			venvmonitor:system venvmonitor.impl;
+			vbasafety:system vbasafety.impl;
+			
+	end vobe.impl;
+	
+	system vqwarn
+	end vqwarn;
+	system implementation vqwarn.impl
+		subcomponents
+			crashavoid_data : process crashavoid_data.impl;
+			onboard_data : process onboard_data.impl;
+			vehicle_actuator_data : process vehicle_actuator_data.impl;
+			comm_fn : process comm_fn.impl;
+			dr_info_interface : process dr_info_interface.impl;
+	end vqwarn.impl;
+	
+	system vroadinforecpt
+	end vroadinforecpt;
+	system implementation vroadinforecpt.impl
+		subcomponents
+			onb_data : process onb_data.impl;
+			loc_data : process loc_data.impl;
+	end vroadinforecpt.impl;
+	
+	system venvmonitor
+	end venvmonitor;
+	system implementation venvmonitor.impl
+		subcomponents
+		sens_data : process sens_data.impl;
+		map_db : process map_db.impl;
+	end venvmonitor.impl;
+	
+	system vbasafety
+	end vbasafety;
+	system implementation vbasafety.impl
+		subcomponents
+			com_remvehicles : process com_remvehicles.impl;
+			gui_int : process gui_int.impl;
+	end vbasafety.impl;
+	
+	process crashavoid_data
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end crashavoid_data;
+	process implementation crashavoid_data.impl
+		subcomponents
+			evalLikelihood : thread evalLikelihood.impl;
+	end crashavoid_data.impl;
+	
+	process	onboard_data
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end onboard_data;
+	process implementation onboard_data.impl
+		subcomponents
+			procInpDataSens : thread procInpDataSens.impl;
+	end onboard_data.impl;
+	
+	
+	process	vehicle_actuator_data
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end vehicle_actuator_data;
+	process implementation vehicle_actuator_data.impl
+		subcomponents
+			interfaceVControlAct : thread interfaceVControlAct.impl;
+	end vehicle_actuator_data.impl;
+	
+	process	comm_fn
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end comm_fn;
+	process implementation comm_fn.impl
+		subcomponents
+			sendMsgstoMgmt : thread sendMsgstoMgmt.impl;
+	end comm_fn.impl;
+	
+	process	dr_info_interface
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end dr_info_interface;
+	process implementation dr_info_interface.impl
+		subcomponents
+			uiForDriver : thread uiForDriver.impl;
+	end dr_info_interface.impl;
+	
+	process onb_data
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end onb_data;
+	process implementation onb_data.impl
+		subcomponents
+		recIpSurrVehicles : thread recIpSurrVehicles.impl;
+	end onb_data.impl;
+	
+	process loc_data
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end loc_data;
+	process implementation loc_data.impl
+		subcomponents
+			curLocData : thread curLocData.impl;
+	end loc_data.impl;
+	
+	process sens_data 
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end sens_data;
+	process implementation sens_data.impl
+		subcomponents
+			analyIpfromVehicle : thread analyIpfromVehicle.impl;
+	end sens_data.impl;
+	
+	process map_db
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end map_db;
+	process implementation map_db.impl
+		subcomponents
+		updateNavDb : thread updateNavDb.impl;
+	end map_db.impl;
+	
+	process com_remvehicles
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end com_remvehicles;
+	process implementation com_remvehicles.impl
+		subcomponents
+			communicateRemVehicles : thread communicateRemVehicles.impl;
+	end com_remvehicles.impl;
+	
+	process gui_int
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end gui_int;
+	process implementation gui_int.impl
+		subcomponents
+			routeguide : thread routeguide.impl;
+	end gui_int.impl;
+	
+	thread evalLikelihood
+	end evalLikelihood;
+	thread implementation evalLikelihood.impl
+	end evalLikelihood.impl;
+	
+	thread procInpDataSens
+	end procInpDataSens;
+	thread implementation procInpDataSens.impl
+	end procInpDataSens.impl;
+	
+	thread interfaceVControlAct
+	end interfaceVControlAct;
+	thread implementation interfaceVControlAct.impl
+	end interfaceVControlAct.impl;
+	
+	thread sendMsgstoMgmt
+	end sendMsgstoMgmt;
+	thread implementation sendMsgstoMgmt.impl
+	end sendMsgstoMgmt.impl;
+	
+	thread uiForDriver
+	end uiForDriver;
+	thread implementation uiForDriver.impl
+	end uiForDriver.impl;
+	
+	thread recIpSurrVehicles
+	end recIpSurrVehicles;
+	thread implementation recIpSurrVehicles.impl
+	end recIpSurrVehicles.impl;
+	
+	thread curLocData
+	end curLocData;
+	thread implementation curLocData.impl
+	end curLocData.impl;
+	
+	thread analyIpfromVehicle
+	end analyIpfromVehicle;
+	thread implementation analyIpfromVehicle.impl
+	end analyIpfromVehicle.impl;
+	
+	thread updateNavDb
+	end updateNavDb;
+	thread implementation updateNavDb.impl
+	end updateNavDb.impl;
+	
+	thread communicateRemVehicles
+	end communicateRemVehicles;
+	thread implementation communicateRemVehicles.impl
+	end communicateRemVehicles.impl;
+	
+	thread routeguide
+	end routeguide;
+	thread implementation routeguide.impl
+	end routeguide.impl;
+	
+	
+end vehicleOBE;

@@ -1,0 +1,157 @@
+package itsRoadwayEquipment
+public
+	system itsrequip
+		features
+			trafficSensorandVideoControl_in : in data port;
+			rodwayWarningSystemControl_in : in data port;
+			environmentSensorControl_in : in data port;
+			trafficSituationData_in : in data port;
+			trafficFlowImgs_out : out data port;
+			rdwayWarnSysStat_out : out data port;
+			envSensData_out : out data port;
+			vehicleSignageLocalData_out : out data port;
+			driverInfo_out : out data port;
+			
+		flows
+			system_sensorandVideovc_sink : flow sink trafficSensorandVideoControl_in;
+			system_warsyscntrl_sink : flow sink rodwayWarningSystemControl_in;
+			system_envsenscntrl_sink : flow sink environmentSensorControl_in;
+			system_situ_sink : flow sink trafficSituationData_in;
+			system_flimg_source : flow source trafficFlowImgs_out;
+			system_rdwarnstat_source : flow source rdwayWarnSysStat_out;
+			system_sendata_source : flow source envSensData_out;
+			system_vsign_source : flow source vehicleSignageLocalData_out;
+			system_dinfo_source : flow source driverInfo_out;
+	end itsrequip;
+
+	system implementation itsrequip.impl
+		subcomponents
+			rowarn : system rowarn.impl;
+			renmon : system renmon.impl;
+			rbsurv : system rbsurv.impl;
+			
+	end itsrequip.impl;
+	
+	system rowarn
+	end rowarn;
+	system implementation rowarn.impl
+		subcomponents
+			speed:process speed.impl;
+	end rowarn.impl;
+	
+	system renmon
+	end renmon;
+	system implementation renmon.impl
+		subcomponents
+			sig_confmonitor : process sig_confmonitor.impl;
+			rep : process rep.impl;
+	end renmon.impl;
+	
+	system rbsurv
+	end rbsurv;
+	system implementation rbsurv.impl
+		subcomponents
+			speedharm : process speedharm.impl;
+			roadlighting : process roadlighting.impl;
+			lanemgmt : process lanemgmt.impl;
+	end rbsurv.impl;
+
+	process speed
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end speed;
+	process implementation speed.impl
+		subcomponents
+			collectSpeed : thread collectSpeed.impl;
+	end speed.impl;
+	
+	process sig_confmonitor
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end sig_confmonitor;
+	process implementation sig_confmonitor.impl
+		subcomponents
+			conflictSignals : thread conflictSignals.impl;
+	end sig_confmonitor.impl;
+	
+	process rep
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end rep;
+	process implementation rep.impl
+		subcomponents
+			collectDatafromSensors : thread collectDatafromSensors.impl;
+	end rep.impl;
+	
+	process speedharm
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end speedharm;
+	process implementation speedharm.impl
+		subcomponents
+			cntrlspeed : thread cntrlspeed.impl;
+	end speedharm.impl;
+	
+	process roadlighting
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end roadlighting;
+	process implementation roadlighting.impl
+		subcomponents
+			rdlightmgmt : thread rdlightmgmt.impl;
+	end roadlighting.impl;
+	
+	process lanemgmt
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end lanemgmt;
+	process implementation lanemgmt.impl
+		subcomponents
+			dynamicLanes : thread dynamicLanes.impl;
+	end lanemgmt.impl;
+	
+	thread collectSpeed
+	end collectSpeed;
+	thread implementation collectSpeed.impl
+	end collectSpeed.impl;
+	
+	thread conflictSignals
+	end conflictSignals;
+	thread implementation conflictSignals.impl
+	end conflictSignals.impl;
+	
+	thread collectDatafromSensors
+	end collectDatafromSensors;
+	thread implementation collectDatafromSensors.impl
+	end collectDatafromSensors.impl;
+	
+	
+	thread dynamicLanes
+	end dynamicLanes;
+	thread implementation dynamicLanes.impl
+	end dynamicLanes.impl;
+	
+	thread cntrlspeed
+	end cntrlspeed;
+	thread implementation cntrlspeed.impl
+	end cntrlspeed.impl;
+	
+	thread rdlightmgmt
+	end rdlightmgmt;
+	thread implementation rdlightmgmt.impl
+	end rdlightmgmt.impl;
+	
+	
+	
+	
+	
+	
+	
+	
+end itsRoadwayEquipment;

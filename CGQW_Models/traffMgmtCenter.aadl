@@ -1,0 +1,159 @@
+package traffMgmtCenter
+public
+	system trafcenter
+		features
+			trafficFlowImgs_in: in data port;
+			roadwayWarningSystemStatus_in: in data port;
+			environmentSensorData_in: in data port;
+			trafficEnvironmentSituationData_in: in data port;
+			queueWarnApplicationStatus_in: in data port;
+			roadNetworkConditions_in: in data port;
+			trafficOperationInputp_in: in data port;
+            trafficSensorCtrlVidSurvCtrl_out : out data port;
+            roadWarnSystemCtrl_out : out data port;
+            environmentSensorsCtrl_out : out data port;
+            queueWarnApplicationInfo_out : out data port;
+            roadNetworkConditions_out : out data port;
+            roaddNetworkConditionsforTranspInfoCenter_out : out data port;
+            trafficOperationData_out : out data port;
+          
+		flows
+			system_trflowimg_sink : flow sink trafficFlowImgs_in;
+			system_rwarnsys_sink : flow sink roadwayWarningSystemStatus_in;
+			system_envsens_sink : flow sink environmentSensorData_in;
+			system_trenvsitu_sink : flow sink trafficEnvironmentSituationData_in;
+			system_qwarnapp_sink : flow sink queueWarnApplicationStatus_in;
+			system_rdnetcond_sink : flow sink roadNetworkConditions_in;
+			system_tropinp_sink : flow sink trafficOperationInputp_in;
+			system_trsenscntrlvidsurv_source : flow source trafficSensorCtrlVidSurvCtrl_out;
+			system_rwarnsyscntrl_source : flow source roadWarnSystemCtrl_out;
+			system_envsenscntrl_source : flow source environmentSensorsCtrl_out;
+			system_qwarnappinfo_source : flow source queueWarnApplicationInfo_out;
+			system_roadnetcond_source : flow source roadNetworkConditions_out;
+			system_rdnetcondforothers_source: flow source roaddNetworkConditionsforTranspInfoCenter_out;
+			system_trafopdata_source : flow source trafficOperationData_out;	 
+	end trafcenter;
+	
+	system implementation trafcenter.impl
+		subcomponents
+			tmc_rdwarning : system tmc_rdwarning.impl;
+			tmc_enmon : system tmc_enmon.impl;
+			tmc_trafsurv : system tmc_trafsurv.impl;
+	end trafcenter.impl;
+	
+	system tmc_rdwarning
+	end tmc_rdwarning;
+	system implementation tmc_rdwarning.impl
+		subcomponents
+			tdata_inter : process tdata_inter.impl;
+            rdwar : process rdwar.impl;
+	end tmc_rdwarning.impl;
+	
+	
+	system tmc_enmon
+	end tmc_enmon;
+	system implementation tmc_enmon.impl
+		subcomponents
+			retr_data : process retr_data.impl;
+			exch_data : process exch_data.impl;
+	end tmc_enmon.impl;
+	
+	system tmc_trafsurv
+	end tmc_trafsurv;
+	system implementation tmc_trafsurv.impl
+		subcomponents
+			trafdata_storage : process trafdata_storage.impl;
+			dynamic_lanes : process dynamic_lanes.impl;
+	end tmc_trafsurv.impl;
+	
+	process tdata_inter
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end tdata_inter;
+	process implementation tdata_inter.impl
+		subcomponents
+		interfaceAccessTrafData : thread interfaceAccessTrafData.impl;
+	end tdata_inter.impl;
+	
+	process rdwar
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end rdwar;
+	process implementation rdwar.impl
+		subcomponents
+		detectHazards : thread detectHazards.impl;
+	end rdwar.impl;
+	
+	process retr_data
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end retr_data;
+	process implementation retr_data.impl
+		subcomponents
+		distAndretrivData : thread distAndretrivData.impl;
+	end retr_data.impl;
+	
+	process exch_data
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end exch_data;
+	process implementation exch_data.impl
+		subcomponents
+		exchgDataTraffMgmtCenter : thread exchgDataTraffMgmtCenter.impl;
+	end exch_data.impl;
+	
+	process trafdata_storage
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end trafdata_storage;
+	process implementation trafdata_storage.impl
+		subcomponents
+			storeDatainDataStores : thread storeDatainDataStores.impl;
+	end trafdata_storage.impl;
+	
+	process dynamic_lanes
+		features
+			data_in : in data port;
+			data_out : out data port;
+	end dynamic_lanes;
+	process implementation dynamic_lanes.impl
+		subcomponents
+			manageLanes : thread manageLanes.impl;
+	end dynamic_lanes.impl;
+	
+	thread interfaceAccessTrafData
+	end interfaceAccessTrafData;
+	thread implementation interfaceAccessTrafData.impl
+	end interfaceAccessTrafData.impl;
+	
+	thread detectHazards
+	end detectHazards;
+	thread implementation detectHazards.impl
+	end detectHazards.impl;
+	
+	thread distAndretrivData
+	end distAndretrivData;
+	thread implementation distAndretrivData.impl
+	end distAndretrivData.impl;
+	
+	thread exchgDataTraffMgmtCenter
+	end exchgDataTraffMgmtCenter;
+	thread implementation exchgDataTraffMgmtCenter.impl
+	end exchgDataTraffMgmtCenter.impl;
+	
+	thread storeDatainDataStores
+	end storeDatainDataStores;
+	thread implementation storeDatainDataStores.impl
+	end storeDatainDataStores.impl;
+	
+	thread manageLanes
+	end manageLanes;
+	thread implementation manageLanes.impl
+	end manageLanes.impl;
+	
+end traffMgmtCenter;

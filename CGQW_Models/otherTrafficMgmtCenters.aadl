@@ -1,0 +1,17 @@
+package otherTrafficMgmtCenters
+public
+	system othertrafmgmtcent
+		
+		features		
+		roadNetworkConditions_in : in data port;
+		roadNetworkConditions_out : out data port;
+		
+		flows
+		rdNetcond_sink : flow sink roadNetworkConditions_in;
+		rdNetcond_source : flow source roadNetworkConditions_out;
+		
+	end othertrafmgmtcent;
+	
+	system implementation othertrafmgmtcent.impl
+	end othertrafmgmtcent.impl;
+end otherTrafficMgmtCenters;

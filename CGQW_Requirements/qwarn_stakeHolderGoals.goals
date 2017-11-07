@@ -1,0 +1,92 @@
+stakeholder goals qwarnsys_Goals for qwarn::qwarn.generic
+[
+	goal g1 : "safety" [
+		description "This life-critical system's main goal should be on the overall safety and security"
+		rationale "Since it is a matter of life and death, a system that can accommodate the safety and security of passengers is a prime goal"
+		stakeholder qwarnsys.sw_dev qwarnsys.proj_mgr qwarnsys.sqe qwarnsys.sw_test qwarnsys.sys_arch qwarnsys.sys_integ qwarnsys.mobile_usr qwarnsys.driver 
+	]
+	
+	
+	goal g2 : "recoverability" [
+		description "The system must be able to recover quickly from disruptions and failures"
+		rationale "In a life-critical system there may be failures and losses and it is important to mitigate these effects and return to safe mode"
+		stakeholder qwarnsys.sw_dev qwarnsys.sqe qwarnsys.sw_test qwarnsys.sys_arch
+	]
+	
+	goal g3 : "correctness" [
+		description "The system shall meet the specification  of the requirements"
+		rationale "since human life is at stake, the system must be correct"
+		stakeholder qwarnsys.sw_test  qwarnsys.sys_arch qwarnsys.sw_dev  qwarnsys.proj_mgr  qwarnsys.driver
+	]
+	
+	goal g4 : "interoperability" [
+		description "The system needs to be highly interoperable"
+		rationale "Data that the system uses will be from other application and hence inter-operability is an important goal"
+		stakeholder qwarnsys.sys_integ qwarnsys.sw_dev qwarnsys.sw_test qwarnsys.sys_arch
+	]
+	
+	
+	
+	goal g5 : "Efficiency" [
+		description "The system shall satisfy the requirements in an efficient manner"
+		rationale "In this life-critical system, efficiency of the system in terms of time taken and its responsiveness is very critical"
+		stakeholder qwarnsys.sw_dev qwarnsys.sw_test qwarnsys.proj_mgr qwarnsys.sys_arch
+	]
+	
+	goal g6 : "reliability" [
+		description "The system shall perform its intended functions and operate in the environment, without experiencing failure"
+		rationale "This safety-critical system should perform consistently according to its specifications and must hence be reliable"
+		stakeholder qwarnsys.sw_dev qwarnsys.sw_test qwarnsys.proj_mgr 
+	]
+	
+	
+	goal g7 : "scalability" [
+		description "The system shall produce the same output even when more number of vehicles are using it a particular time"
+		rationale "With the system constantly being used by an increasing number of people, the system should be able to scale the increased demands and growth"
+		stakeholder qwarnsys.sw_dev qwarnsys.sw_test qwarnsys.proj_mgr qwarnsys.sys_arch
+	]
+	
+	goal g8 : "accuracy" [
+		description "The system shall support accurate and precise values being transmitted"
+		rationale "Even a small inaccuracy in values could be critical and may have a profound impact on the people in the vehicle"
+		stakeholder qwarnsys.sw_dev qwarnsys.sw_test qwarnsys.sqe qwarnsys.sys_arch
+	]
+	
+	goal g9 : "seamlessness" [
+		description "The system shall be seamless in continually updating locational information"
+		rationale "As the car moves, the distance to the queues continually changes and this must be updated dynamically in the system to avoid any mishaps"
+		stakeholder qwarnsys.driver qwarnsys.sw_test qwarnsys.sqe qwarnsys.sys_arch qwarnsys.sw_dev qwarnsys.sys_integ qwarnsys.proj_mgr
+	]
+	
+	goal g10 : "upgradability" [
+		description "The system shall be able to correct defects , cope with changing environments and the algorithm should be updatable "
+		rationale "since the data keeps changing, the algorithm may need to modify its structure to enable accurate predictions"
+		stakeholder qwarnsys.sw_test qwarnsys.sqe qwarnsys.sys_arch qwarnsys.sw_dev qwarnsys.sys_integ qwarnsys.proj_mgr
+	]
+	
+	goal g11 : "user-friendly" [
+		description "The system needs to be easy, smooth and understandable to its users"
+		rationale "Since it is a safety-critical system, a user friendly system that shields complexity from user is of prime importance "
+		stakeholder qwarnsys.sys_arch qwarnsys.sqe qwarnsys.sw_dev  qwarnsys.driver qwarnsys.mobile_usr
+	]
+	
+	goal g12 : "transparency" [
+		description "The system shall operate in such a way that other vehicles and system infrastructure can easily see the decisions and actions made"
+		rationale "Other vehicles' operation will depend upon how this system operates in a particular scenario"
+		stakeholder qwarnsys.driver qwarnsys.sqe qwarnsys.sys_arch qwarnsys.sw_dev  qwarnsys.proj_mgr
+	]
+	
+	goal g13 : "durability" [
+		description "The durability of the system should be long and its life-span should be large"
+		rationale "The developed system must fulfill the user's need for a relatively long amount of time"
+		stakeholder qwarnsys.sw_dev qwarnsys.sw_test qwarnsys.sys_arch 
+	]
+	
+	
+	
+	
+	
+	
+	
+	
+	]
