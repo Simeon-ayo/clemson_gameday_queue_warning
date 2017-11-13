@@ -1,5 +1,4 @@
-system requirements qwarnsys_requirements
-for qwarn::qwarn.generic
+system requirements qwarnsys_requirements for integratedSystem::queueWarning
 [
 	val minStrength=5.40
 	val minwarnings=0.0
