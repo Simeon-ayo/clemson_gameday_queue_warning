@@ -80,13 +80,6 @@ stakeholder goals qwarnsys_Goals for integratedSystem::queueWarning
 		description "The durability of the system should be long and its life-span should be large"
 		rationale "The developed system must fulfill the user's need for a relatively long amount of time"
 		stakeholder qwarnsys.sw_dev qwarnsys.sw_test qwarnsys.sys_arch 
-	]
-	
-	
-	
-	
-	
-	
-	
+	]	
 	
 	]
