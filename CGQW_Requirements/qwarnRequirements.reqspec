@@ -1,24 +1,49 @@
 system requirements qwarnsys_requirements for integratedSystem::queueWarning
 [
-	val minStrength=5.40
+	val minimunQueue= 7.00
+	val maximumSpeed=70.00
+	val minimumData=2.00
+	val thresholdQueue=12.00
+	val minimumStrength=4.65
 	val minwarnings=0.0
-	val minresp=1.00
-	val maxallowedresponsetime=4.33
-	val minQueueforComm=13.00
-	val minQ= 8.00
-	val maxSpeed=80.45
-	val minData=3.00
-	val threshQ=10.00
+	val minimumresponseTime=1.10
+	val maxallowedresponsetime=3.50
+	val minimumQueueforCommunication=15.00
+	val minimumAccuracyLevel=0.05
 	
 	
-	requirement fail_operational : "The system must continue to operate even in the case of failure of certain components"
+	
+	requirement sendorSignalStrength : "The vehicle OBE and sensors shall have high signal strength to receive information"
+	[
+		description this " The sensors shall be able to send data to a high degree of precision"
+		compute signalStrength:real
+		value predicate signalStrength <= minimumresponseTime
+		rationale "This is a critical component because the system is dependent on the sensors in order to make queue decisions and predictions"
+		see goal qwarnsys_Goals.g1 qwarnsys_Goals.g5 qwarnsys_Goals.g6
+		issues "Integrity Level 4"
+	]
+	
+	requirement operationalFailure : "The system must continue to operate even in the case of failure of certain components"
 	[
 		description this "system must be able to operate even in the event of failure minimizing harm to other systems"
+		compute systemResponseTime:real
+		value predicate systemResponseTime >= minimumStrength
 		rationale "the control systems may fail and this system must cope by either going to a safe state or by operating with other systems"
 		mitigates "damage caused due to failure of components"
 		see goal qwarnsys_Goals.g1 qwarnsys_Goals.g2
 		issues "Integrity Level 5"
 	]
+	
+	requirement detectQueueFormation : "The system shall accurately detect queue formation"
+ 	[
+    description this "The Q-warn system must detect the existence of a queue in a particular lane if there are certain minimum number of vehicles in that lane "
+    rationale "the system must be able to detect queue on game day to prevent accident. The integrity level is 5"
+    compute noOfVehicles : real
+    value predicate noOfVehicles > minimunQueue
+    mitigates "rear end collisions"
+    see goal qwarnsys_Goals.g1 qwarnsys_Goals.g3 qwarnsys_Goals.g5
+    issues "Integrity Level 5"
+    ]
 	
 	requirement individulized_warning : "The q-warn system must generate individualized queue warnings"
 	[	
@@ -35,22 +60,12 @@ system requirements qwarnsys_requirements for integratedSystem::queueWarning
 	requirement accurate_system : "The system shall handle accurate values of vehicle speed, location, position in queue"
 	[
 		description this "system shall handle high precision values of vehicle speed, location"
+		compute accuracyLevel : real
+		value predicate accuracyLevel > minimumAccuracyLevel
 		rationale "In a life-critical system, a small change in the precision and accuracy can be vital"
 		mitigates "collision in queues"
 		see goal qwarnsys_Goals.g8
 		issues "Integrity Level 3"
-	]
-	
-	
-	requirement signal_strength : "The sensors along with the vehicle OBE shall have high signal strength in terms of receiving information"
-	[
-		description this "sensors should be capable of sensing data to a high degree of precision"
-		
-		compute signalStrength:real
-		value predicate signalStrength >= minStrength
-		rationale "the system is dependent on the sensors in order to make queue decisions and predictions"
-		see goal qwarnsys_Goals.g1 qwarnsys_Goals.g5 qwarnsys_Goals.g6
-		issues "Integrity Level 4"
 	]
 	
 	requirement reliable_system : "The system should have failure-free software operation for a specified period of time in a given environment"
@@ -67,7 +82,7 @@ system requirements qwarnsys_requirements for integratedSystem::queueWarning
 		description this "system shall recommend accurate speed values from the application in order to regulate the vehicle speed when it headed for a queue"
 		compute queueDistance:real
 		compute suggestedSpeed:real
-		value predicate suggestedSpeed < maxSpeed && queueDistance < minQ
+		value predicate suggestedSpeed < maximumSpeed && queueDistance < minimunQueue
 		rationale "Accuracy of speed values in this life-critical system is very important given the distance of the vehicle to the queue"
 		mitigates "queue build up"
 		see goal qwarnsys_Goals.g8 qwarnsys_Goals.g9
@@ -78,7 +93,7 @@ system requirements qwarnsys_requirements for integratedSystem::queueWarning
 	requirement predictQueue : "The system shall predict impending queues"
 	[
 		compute predQ:real
-		value predicate predQ >= threshQ
+		value predicate predQ >= thresholdQueue
 		description this "The system shall correctly predict the formation of queues based on data collected from other vehicles and infrastructure systems"
 		rationale "it can inform the driver of a vehicle about a queue that can be formed later"
 		mitigates "queue formation"
@@ -97,78 +112,12 @@ system requirements qwarnsys_requirements for integratedSystem::queueWarning
 	requirement generate_respStrategies : "The system shall generate response strategies to the driver"
 	[
 		compute respStrategies:real
-		value predicate respStrategies >= minresp
+		value predicate respStrategies >= minimumresponseTime
 		description this "Based on queue information, measures such lane changing, speed reductions must be suggested to the driver"
 		rationale "Only is response strategies are generated, can the driver take alternative courses of action to avoid queues "
 		mitigates "traffic aggregation"
 		see goal qwarnsys_Goals.g3 qwarnsys_Goals.g13
 		issues "Integrity Level 4"
 	]
-	
-	requirement dataCollection : "The system should be able to collect multiple types of data"
-	[ 	
-		compute num_data : real
-		value predicate num_data >= minData
-		description this "data such as traffic information, road and weather conditions, etc. must be collected"
-		rationale "such external data is important as it influences queue decisions and lane choices"
-		mitigates "queue prediction errors"
-		see goal qwarnsys_Goals.g5
-		issues "Integrity Level 3"
-	]
-	
-	requirement responseTime : "The system response should be fast"
- 	[
-  	description this "A system with faster response is desirable"
-  	rationale "Response time will decide how much time it takes in sensing queues and predicting response strategies "
-    compute observedresponsetime: real
-    value predicate observedresponsetime <= maxallowedresponsetime
-    mitigates "Slow response of System and communication delays"
-    see goal qwarnsys_Goals.g6 qwarnsys_Goals.g7
-    issues "Integrity Level 4"
-    ]
-	
-	
-	requirement upgradable_system : "The system shall be able to use the collected data to update its prediction algorithm"
- 	[
-    description this "based on the collected data, the system will have to update its queue prediction algorithm"
-    rationale "since vehicles are continuously in motion and the number of vehicles keep changing, it is important that the system dynamically predicts responses"
-    mitigates "performance loss in queue prediction algorithm"
-    see goal qwarnsys_Goals.g10
-    issues "Integrity Level 2"
-    ]
-    
-    
-	requirement predicteQueueResolution : "The system shall predict the time taken for a queue to resolve"
- 	[
-    description this "the system will have to make a prediction based on how much time it thinks a queue will take to be resolved"
-    rationale "this informs the driver and passengers which lane to take in order to avoid entering a queue"
-    compute predictedResolutionTime: real
-    value predicate predictedResolutionTime > 0
-    mitigates "queue formation and probable queue collisions"
-    see goal qwarnsys_Goals.g1 qwarnsys_Goals.g3
-    issues "Integrity Level 3"
-    ]
-	
-	requirement broadcastQueueInformation : "The system shall communicate and broadcast queue characteristic information such as the length of queue, lanes impacted, number of vehicles in a particular queue, etc. to the driver "
- 	[
-    description this "the application should communicate queue information such as the length of queue, lanes impacted, number of vehicles in a particular queue, etc. to the driver based on the vehicles distance from the end of the queue"
-    rationale "based on the how far the vehicle is from the queue, queue information is communicated to the driver in order to make decisions"
-    compute lengthofQueue: real
-    value predicate lengthofQueue > minQueueforComm
-    mitigates "queue formation and probable queue collisions"
-    see goal qwarnsys_Goals.g1 qwarnsys_Goals.g3 qwarnsys_Goals.g12
-    issues "Integrity Level 4"
-    ]
-    
-    requirement detectQueu : "The system shall correctly recognize queues when they are formed"
- 	[
-    description this "The Q-warn system must detect the existence of a queue in a particular lane if there are certain minimum number of vehicles in that lane "
-    rationale "Only if the system is able to detect a queue, can it make predictions and generate response strategies for incoming vehicles"
-    compute noOfVehicles : real
-    value predicate noOfVehicles > minQ
-    mitigates "rear end collisions"
-    see goal qwarnsys_Goals.g1 qwarnsys_Goals.g3 qwarnsys_Goals.g5
-    issues "Integrity Level 5"
-    ]
 	
 ]
