@@ -69,9 +69,7 @@ public
 			vehicle_environmentData : end to end flow this_vehicleOBE.system_venv_source -> vehicle_environmentData_conn -> this_roadsideEquipment.system_venv_sink;
 			vehicle_signageData : end to end flow this_roadsideEquipment.system_vsign_source -> vehicle_signageData_conn -> this_vehicleOBE.system_vsign_sink;
 			queue_warninginfo : end to end flow this_roadsideEquipment.system_qwarninfo_source -> queue_warninginfo_conn -> this_vehicleOBE.system_qwarninfo_sink;
---			vehicle_signagelocaldata : end to end flow itsRoadwayEquipment.system_vsign_source -> vehicle_signagedata_conn -> vehicleOBE.system_vsign_sink;
 			traffic_situationdata : end to end flow this_roadsideEquipment.system_trasitu_source -> traffic_situationdata_conn -> this_itsRoadwayEquipment.system_situ_sink;
---			queue_warningAppStatus : end to end flow this_roadsideEquipment.system_qwarnappstat_source -> queue_warningAppStatus_conn -> this_traffMgmtCenter.system_qwarnapp_sink;
 			queue_warningAppInformation : end to end flow this_traffMgmtCenter.system_qwarnappinfo_source -> queue_warningAppInformation_conn -> this_roadsideEquipment.system_qwarnapp_sink;
 			traff_situDataEnvSituationData : end to end flow this_roadsideEquipment.system_trsituenv_source -> traff_situDataEnvSituationData_conn -> this_traffMgmtCenter.system_trenvsitu_sink;
 			environment_sensorData : end to end flow this_itsRoadwayEquipment.system_sendata_source -> environment_sensorData_conn ->this_traffMgmtCenter.system_envsens_sink;

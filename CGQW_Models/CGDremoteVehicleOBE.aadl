@@ -1,5 +1,7 @@
 package CGDremoteVehicleOBE
 public
+	with EMV2;
+	
 	system cgdremvehobe
 		
 		features
@@ -9,6 +11,25 @@ public
 		flows
 			system_vcntrleventloc_source : flow source vehicleControlEventLocationMotion_out;
 			system_vcntrleventlocmot_sink : flow sink vehicleConttrolEventLocationMotion_in; 
+				
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				vehicleConttrolEventLocationMotion_in : in propagation {NoValue, BadValue, LateValue};
+				vehicleControlEventLocationMotion_out : out propagation {NoValue,BadValue, LateValue};
+				
+			flows
+				ef0 : error sink vehicleConttrolEventLocationMotion_in{NoValue,BadValue, LateValue};
+				ef1 : error source vehicleControlEventLocationMotion_out{NoValue,BadValue, LateValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([failure => "ValueError";	
+				  	description => "No data , Invalid date or Late data from Remote Vehicle OBEs annd to Roadside Equipment";
+					])
+			applies to vehicleConttrolEventLocationMotion_in.ValueError,vehicleControlEventLocationMotion_out.ValueError;						
+		**};
 	end cgdremvehobe;
 	
 	system implementation cgdremvehobe.impl

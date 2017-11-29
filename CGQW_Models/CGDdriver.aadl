@@ -12,16 +12,18 @@ public
 			input_source : flow source driverInput_out;
 			info_sink : flow sink driverInfo_in;
 			update_sink : flow sink driverUpdates_in;			
-		properties
-			latency => 1 ms .. 3 ms applies to driverUpdates_in, driverInput_out;
 		
 		annex EMV2 {**
 			use types error_library; 
 		
 			error propagations
-				driverInput_out : out propagation {NoValue};
+				driverInput_out : out propagation {NoValue, BadValue, LateValue};
+				driverInfo_in : in propagation {NoValue, BadValue, LateValue};
+				driverUpdates_in : in propagation {NoValue, BadValue, LateValue};
 			flows
 				ef0 : error source driverInput_out{NoValue};
+				ef1 : error sink driverInfo_in{NoValue, BadValue, LateValue};
+				ef2 : error sink driverUpdates_in{NoValue, BadValue, LateValue};
 			end propagations;
 			properties
 				emv2::hazards => 

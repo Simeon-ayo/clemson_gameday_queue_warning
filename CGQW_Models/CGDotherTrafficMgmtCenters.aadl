@@ -1,5 +1,7 @@
 package CGDotherTrafficMgmtCenters
 public
+	with EMV2;
+	
 	system cgdothertrafmgmtcent
 		
 		features		
@@ -9,6 +11,25 @@ public
 		flows
 		rdNetcond_sink : flow sink roadNetworkConditions_in;
 		rdNetcond_source : flow source roadNetworkConditions_out;
+		
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				roadNetworkConditions_in : in propagation {NoValue, BadValue, LateValue};
+				roadNetworkConditions_out : out propagation {NoValue,BadValue, LateValue};
+				
+			flows
+				ef0 : error sink roadNetworkConditions_in{NoValue,BadValue, LateValue};
+				ef1 : error source roadNetworkConditions_out{NoValue,BadValue, LateValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([failure => "ValueError";	
+				  	description => "No data , Invalid date or Late data from Traffic Management Center";
+					])
+			applies to roadNetworkConditions_in.ValueError,roadNetworkConditions_out.ValueError;						
+		**};
 		
 	end cgdothertrafmgmtcent;
 	

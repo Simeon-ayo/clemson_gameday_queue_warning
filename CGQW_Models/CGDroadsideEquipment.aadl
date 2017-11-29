@@ -1,5 +1,7 @@
 package CGDroadsideEquipment
 public
+	with EMV2;
+	
 	system cgdrodequip
 		features
 			queueWarningApplicationInformation_in : in data port;
@@ -22,6 +24,42 @@ public
 			system_trasitu_source : flow source trafSituationData_out;
 			system_qwarninfo_source : flow source qWarnInfo_out;
 			system_vsign_source : flow source vehSignData_out;
+				
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				queueWarningApplicationInformation_in : in propagation {NoValue, BadValue, LateValue};
+				vehicleSignageLocalData_in : in propagation {NoValue,BadValue, LateValue};
+				veEnvironmentData_in : in propagation {NoValue,BadValue, LateValue};
+				veControlEventLocationMotion_in : in propagation {NoValue,BadValue, LateValue};
+				trafficSituationDataEnvData_out : out propagation {NoValue,BadValue, LateValue};
+				queueWarnAppStatus_out : out propagation {NoValue,BadValue, LateValue};
+				trafSituationData_out : out propagation {NoValue,BadValue, LateValue};
+				qWarnInfo_out : out propagation {NoValue,BadValue, LateValue};
+				vehSignData_out : out propagation {NoValue,BadValue, LateValue};
+			flows
+				ef0 : error sink queueWarningApplicationInformation_in{NoValue,BadValue, LateValue};
+				ef1 : error sink vehicleSignageLocalData_in{NoValue,BadValue, LateValue};
+				ef2 : error sink veEnvironmentData_in{NoValue,BadValue, LateValue};
+				ef3 : error sink veControlEventLocationMotion_in{NoValue,BadValue, LateValue};
+				ef4 : error source trafficSituationDataEnvData_out{NoValue,BadValue, LateValue};
+				ef5 : error source queueWarnAppStatus_out{NoValue,BadValue, LateValue};
+				ef6 : error source trafSituationData_out{NoValue,BadValue, LateValue};
+				ef7 : error source qWarnInfo_out{NoValue,BadValue, LateValue};
+				ef8 : error source vehSignData_out{NoValue,BadValue, LateValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([failure => "ValueError";	
+				  	description => "No data , Invalid date or Late data from the Traffic Managment Center, Roadway Equipment and to Vehicle OBE";
+					])
+			applies to queueWarningApplicationInformation_in.ValueError,vehicleSignageLocalData_in.ValueError,
+						veEnvironmentData_in.ValueError,veControlEventLocationMotion_in.ValueError,
+						trafficSituationDataEnvData_out.ValueError,queueWarnAppStatus_out.ValueError,qWarnInfo_out.ValueError,
+						trafSituationData_out.ValueError,vehSignData_out.ValueError;
+		**};
+		
 	end cgdrodequip;
 	
 	system implementation cgdrodequip.impl

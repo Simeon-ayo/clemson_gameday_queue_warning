@@ -1,5 +1,7 @@
 package CGDitsRoadwayEquipment
 public
+	with EMV2;
+	
 	system cgditsrequip
 		features
 			trafficSensorandVideoControl_in : in data port;
@@ -22,6 +24,41 @@ public
 			system_sendata_source : flow source envSensData_out;
 			system_vsign_source : flow source vehicleSignageLocalData_out;
 			system_dinfo_source : flow source DriverInfo_out;
+		
+		
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				trafficSensorandVideoControl_in : in propagation {NoValue, BadValue, LateValue};
+				rodwayWarningSystemControl_in : in propagation {NoValue,BadValue, LateValue};
+				environmentSensorControl_in : in propagation {NoValue,BadValue, LateValue};
+				trafficSituationData_in : in propagation {NoValue,BadValue, LateValue};
+				trafficFlowImgs_out : out propagation {NoValue,BadValue, LateValue};
+				rdwayWarnSysStat_out : out propagation {NoValue,BadValue, LateValue};
+				envSensData_out : out propagation {NoValue,BadValue, LateValue};
+				DriverInfo_out : out propagation {NoValue,BadValue, LateValue};
+			flows
+				ef0 : error sink trafficSensorandVideoControl_in{NoValue,BadValue, LateValue};
+				ef1 : error sink rodwayWarningSystemControl_in{NoValue,BadValue, LateValue};
+				ef2 : error sink environmentSensorControl_in{NoValue,BadValue, LateValue};
+				ef3 : error sink trafficSituationData_in{NoValue,BadValue, LateValue};
+				ef4 : error source trafficFlowImgs_out{NoValue,BadValue, LateValue};
+				ef5 : error source rdwayWarnSysStat_out{NoValue,BadValue, LateValue};
+				ef6 : error source envSensData_out{NoValue,BadValue, LateValue};
+				ef7 : error source DriverInfo_out{NoValue,BadValue, LateValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([failure => "ValueError";	
+				  	description => "No data , Invalid date or Late data from the Managment Control Center and Road side Equipment";
+					])
+			applies to trafficSensorandVideoControl_in.ValueError,rodwayWarningSystemControl_in.ValueError,
+						environmentSensorControl_in.ValueError,trafficSituationData_in.ValueError,
+						trafficFlowImgs_out.ValueError,rdwayWarnSysStat_out.ValueError,envSensData_out.ValueError,
+						DriverInfo_out.ValueError;
+		**};
+		
 	end cgditsrequip;
 
 	system implementation cgditsrequip.impl
@@ -145,13 +182,6 @@ public
 	thread rdlightmgmt
 	end rdlightmgmt;
 	thread implementation rdlightmgmt.impl
-	end rdlightmgmt.impl;
-	
-	
-	
-	
-	
-	
-	
+	end rdlightmgmt.impl;	
 	
 end CGDitsRoadwayEquipment;

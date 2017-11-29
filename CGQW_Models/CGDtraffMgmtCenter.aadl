@@ -1,5 +1,7 @@
 package CGDtraffMgmtCenter
 public
+	with EMV2;
+	
 	system cgdtrafcenter
 		features
 			trafficFlowImgs_in: in data port;
@@ -31,7 +33,52 @@ public
 			system_qwarnappinfo_source : flow source queueWarnApplicationInfo_out;
 			system_roadnetcond_source : flow source roadNetworkConditions_out;
 			system_rdnetcondforothers_source: flow source roaddNetworkConditionsforTranspInfoCenter_out;
-			system_trafopdata_source : flow source trafficOperationData_out;	 
+			system_trafopdata_source : flow source trafficOperationData_out;
+			
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				trafficFlowImgs_in : in propagation {NoValue, BadValue, LateValue};
+				roadwayWarningSystemStatus_in : in propagation {NoValue,BadValue, LateValue};
+				environmentSensorData_in : in propagation {NoValue,BadValue, LateValue};
+				trafficEnvironmentSituationData_in : in propagation {NoValue,BadValue, LateValue};
+				queueWarnApplicationStatus_in : in propagation {NoValue,BadValue, LateValue};
+				roadNetworkConditions_in : in propagation {NoValue,BadValue, LateValue};
+				trafficOperationInputp_in : in propagation {NoValue,BadValue, LateValue};
+				trafficSensorCtrlVidSurvCtrl_out : out propagation {NoValue,BadValue, LateValue};
+				roadWarnSystemCtrl_out : out propagation {NoValue,BadValue, LateValue};
+				environmentSensorsCtrl_out : out propagation {NoValue,BadValue, LateValue};
+				queueWarnApplicationInfo_out : out propagation {NoValue,BadValue, LateValue};
+				roadNetworkConditions_out : out propagation {NoValue,BadValue, LateValue};
+				roaddNetworkConditionsforTranspInfoCenter_out : out propagation {NoValue,BadValue, LateValue};
+				trafficOperationData_out : out propagation {NoValue,BadValue, LateValue};
+			flows
+				ef0 : error sink trafficFlowImgs_in{NoValue,BadValue, LateValue};
+				ef1 : error sink roadwayWarningSystemStatus_in{NoValue,BadValue, LateValue};
+				ef2 : error sink environmentSensorData_in{NoValue,BadValue, LateValue};
+				ef3 : error sink trafficEnvironmentSituationData_in{NoValue,BadValue, LateValue};
+				ef4 : error sink queueWarnApplicationStatus_in{NoValue,BadValue, LateValue};
+				ef5 : error sink roadNetworkConditions_in{NoValue,BadValue, LateValue};
+				ef6 : error sink trafficOperationInputp_in{NoValue,BadValue, LateValue};
+				ef7 : error source trafficSensorCtrlVidSurvCtrl_out{NoValue,BadValue, LateValue};
+				ef8 : error source roadWarnSystemCtrl_out{NoValue,BadValue, LateValue};
+				ef9 : error source environmentSensorsCtrl_out{NoValue,BadValue, LateValue};
+				ef10 : error source queueWarnApplicationInfo_out{NoValue,BadValue, LateValue};
+				ef11 : error source roadNetworkConditions_out{NoValue,BadValue, LateValue};
+				ef12 : error source roaddNetworkConditionsforTranspInfoCenter_out{NoValue,BadValue, LateValue};
+				ef13 : error source trafficOperationData_out{NoValue,BadValue, LateValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([failure => "ValueError";	
+				  	description => "No data , Invalid date or Late data from the Managment Control Center and Road side Equipment";
+					])
+			applies to trafficFlowImgs_in.ValueError,roadwayWarningSystemStatus_in.ValueError,
+						environmentSensorData_in.ValueError,trafficEnvironmentSituationData_in.ValueError,
+						trafficSensorCtrlVidSurvCtrl_out.ValueError,roadWarnSystemCtrl_out.ValueError,environmentSensorsCtrl_out.ValueError,
+						queueWarnApplicationInfo_out.ValueError;
+		**};	 
 	end cgdtrafcenter;
 	
 	system implementation cgdtrafcenter.impl
