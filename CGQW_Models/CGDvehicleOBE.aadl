@@ -1,5 +1,7 @@
 package CGDvehicleOBE
 public
+	with EMV2;
+	
 	system cgdvobe
 		features
 			queueWarningInformation_in:in data port;
@@ -24,7 +26,46 @@ public
 			system_vcntrllocmot2_source : flow source vehCtrlEventLocMotion2_out;
 			system_dupdate_source : flow source driverUpdates_out;
 			system_colwarndupdate_source : flow source collisionWarnDriverUpdate_out;
+		
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				queueWarningInformation_in : in propagation {NoValue, BadValue, LateValue};
+				vehicleSignageData_in : in propagation {NoValue,BadValue, LateValue};
+				vehicleControlEventLocationMotion_in : in propagation {NoValue,BadValue, LateValue};
+				driverInput_in : in propagation {NoValue,BadValue, LateValue};
+				hostVehicleStatuseDriverInputInformation_in : in propagation {NoValue,BadValue, LateValue};
+				vehEnvironmentData_out : out propagation {NoValue,BadValue, LateValue};
+				vehControlEventLocationMotionForSurv_out : out propagation {NoValue,BadValue, LateValue};
+				vehCtrlEventLocMotion2_out : out propagation {NoValue,BadValue, LateValue};
+				driverUpdates_out : out propagation {NoValue,BadValue, LateValue};
+				collisionWarnDriverUpdate_out : out propagation {NoValue,BadValue, LateValue};
+			flows
+				ef0 : error sink queueWarningInformation_in{NoValue,BadValue, LateValue};
+				ef1 : error sink vehicleSignageData_in{NoValue,BadValue, LateValue};
+				ef2 : error sink vehicleControlEventLocationMotion_in{NoValue,BadValue, LateValue};
+				ef3 : error sink driverInput_in{NoValue,BadValue, LateValue};
+				ef4 : error sink hostVehicleStatuseDriverInputInformation_in{NoValue,BadValue, LateValue};
+				ef5 : error source vehEnvironmentData_out{NoValue,BadValue, LateValue};
+				ef6 : error source vehControlEventLocationMotionForSurv_out{NoValue,BadValue, LateValue};
+				ef7 : error source vehCtrlEventLocMotion2_out{NoValue,BadValue, LateValue};
+				ef8 : error source driverUpdates_out{NoValue,BadValue, LateValue};
+				ef9 : error source collisionWarnDriverUpdate_out{NoValue,BadValue, LateValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([failure => "ValueError";	
+				  	description => "No data , Invalid date or Late data from the Managment Control Center and Road side Equipment";
+					])
+			applies to queueWarningInformation_in.ValueError,vehicleSignageData_in.ValueError,
+						vehicleControlEventLocationMotion_in.ValueError,driverInput_in.ValueError,
+						vehEnvironmentData_out.ValueError,vehControlEventLocationMotionForSurv_out.ValueError,vehCtrlEventLocMotion2_out.ValueError,
+						driverUpdates_out.ValueError;
+		**};
+		
 	end cgdvobe;
+	
 	system implementation cgdvobe.impl
 		subcomponents 
 			vqwarn:system vqwarn.impl;

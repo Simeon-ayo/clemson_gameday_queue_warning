@@ -1,5 +1,7 @@
 package CGDtraffOppPersonel
 public
+	with EMV2;
+	
 	system cgdtrafOpPers
 		features
 			trafficOperationInput_out :out data port;
@@ -8,6 +10,25 @@ public
 		flows
 			trafopdata_sink : flow sink trafficOperationData_in;
 			trafopinp_source : flow source trafficOperationInput_out;
+			
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				trafficOperationData_in : in propagation {NoValue, BadValue, LateValue};
+				trafficOperationInput_out : out propagation {NoValue,BadValue, LateValue};
+				
+			flows
+				ef0 : error sink trafficOperationData_in{NoValue,BadValue, LateValue};
+				ef1 : error source trafficOperationInput_out{NoValue,BadValue, LateValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([failure => "ValueError";	
+				  	description => "No data , Invalid date or Late data from and to Traffic Management Center";
+					])
+			applies to trafficOperationData_in.ValueError,trafficOperationInput_out.ValueError;						
+		**};
 	end cgdtrafOpPers;
 	
 	system implementation cgdtrafOpPers.impl

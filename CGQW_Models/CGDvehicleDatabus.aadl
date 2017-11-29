@@ -1,5 +1,7 @@
 package CGDvehicleDatabus
 public
+	with EMV2;
+	
 	system cgdvehicledbus
 		features
 			collisionWarnInfoDrivUpdateInfo_in : in data port;
@@ -8,6 +10,25 @@ public
 		flows
 			system_colwarninfodupdate_sink : flow sink collisionWarnInfoDrivUpdateInfo_in;
 			system_hvstatdinpinfo_source : flow source hostvehStatDrivInpInfo_out;
+				
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				collisionWarnInfoDrivUpdateInfo_in : in propagation {NoValue, BadValue, LateValue};
+				hostvehStatDrivInpInfo_out : out propagation {NoValue,BadValue, LateValue};
+				
+			flows
+				ef0 : error sink collisionWarnInfoDrivUpdateInfo_in{NoValue,BadValue, LateValue};
+				ef1 : error source hostvehStatDrivInpInfo_out{NoValue,BadValue, LateValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([failure => "ValueError";	
+				  	description => "No data , Invalid date or Late data from and to Vehicle OBE";
+					])
+			applies to collisionWarnInfoDrivUpdateInfo_in.ValueError,hostvehStatDrivInpInfo_out.ValueError;						
+		**};
 	end cgdvehicledbus;
 	
 	system implementation cgdvehicledbus.impl
