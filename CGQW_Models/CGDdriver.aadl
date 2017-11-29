@@ -1,0 +1,18 @@
+package CGDdriver
+public
+	abstract cgdDriver
+		features
+			driverInput_out : out data port ;
+			driverInfo_in : in data port;
+			driverUpdates_in : in data port ;
+		
+		flows
+			input_source : flow source driverInput_out;
+			info_sink : flow sink driverInfo_in;
+			update_sink : flow sink driverUpdates_in;			
+	end cgdDriver;
+	
+	abstract implementation cgdDriver.impl		
+	end cgdDriver.impl;
+	
+end CGDdriver;

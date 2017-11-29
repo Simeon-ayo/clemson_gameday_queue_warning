@@ -1,6 +1,6 @@
-package remoteVehicleOBE
+package CGDremoteVehicleOBE
 public
-	system remvehobe
+	system cgdremvehobe
 		
 		features
 			vehicleControlEventLocationMotion_out : out data port;
@@ -9,9 +9,9 @@ public
 		flows
 			system_vcntrleventloc_source : flow source vehicleControlEventLocationMotion_out;
 			system_vcntrleventlocmot_sink : flow sink vehicleConttrolEventLocationMotion_in; 
-	end remvehobe;
+	end cgdremvehobe;
 	
-	system implementation remvehobe.impl
-	end remvehobe.impl;
+	system implementation cgdremvehobe.impl
+	end cgdremvehobe.impl;
 	
-end remoteVehicleOBE;
+end CGDremoteVehicleOBE;

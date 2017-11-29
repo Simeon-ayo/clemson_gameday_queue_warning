@@ -1,0 +1,14 @@
+package CGDtransInfoCenter
+public
+	system cgdtransinfocent
+		features
+			roadNetworkConditions_in : in data port;
+		
+		flows
+			rdnetcond_source : flow sink roadNetworkConditions_in;
+	end cgdtransinfocent;
+	
+	system implementation cgdtransinfocent.impl
+	end cgdtransinfocent.impl;
+	
+end CGDtransInfoCenter;

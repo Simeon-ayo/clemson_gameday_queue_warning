@@ -1,0 +1,97 @@
+package CGDintegratedSystem
+public
+	
+	with CGDdriver;
+	with CGDitsRoadwayEquipment;
+	with CGDotherTrafficMgmtCenters;
+	with CGDremoteVehicleOBE;
+	with CGDroadsideEquipment;
+	with CGDtraffMgmtCenter;
+	with CGDtraffOppPersonel;
+	with CGDtransInfoCenter;
+	with CGDvehicleDatabus;
+	with CGDvehicleOBE;
+	
+	system CGDqueueWarning
+	end CGDqueueWarning;
+	
+	system implementation CGDqueueWarning.impl
+		subcomponents
+			
+			this_driver : abstract CGDdriver::cgdDriver;
+			this_itsRoadwayEquipment : system CGDitsRoadwayEquipment::cgditsrequip.impl;
+			this_otherTrafficMgmtCenters : system CGDotherTrafficMgmtCenters::cgdothertrafmgmtcent.impl;
+			this_roadsideEquipment : system CGDroadsideEquipment::cgdrodequip.impl;
+			this_traffMgmtCenter : system CGDtraffMgmtCenter::cgdtrafcenter.impl;
+			this_traffOppPersonel : system CGDtraffOppPersonel::cgdtrafOpPers.impl;
+			this_transInfoCenter : system CGDtransInfoCenter::cgdtransinfocent.impl;
+			this_vehicleDatabus : system CGDvehicleDatabus::cgdvehicledbus.impl;
+			this_vehicleOBE : system CGDvehicleOBE::cgdvobe.impl;
+			this_remoteVehicleOBE : system CGDremoteVehicleOBE::cgdremvehobe.impl;
+	
+		connections
+			driver_input_conn : port this_driver.DriverInput_out -> this_vehicleOBE.driverInput_in;
+			driver_updates_conn : port this_vehicleOBE.driverUpdates_out -> this_driver.DriverUpdates_in;
+			driver_information_conn : port this_itsRoadwayEquipment.driverInfo_out -> this_driver.DriverInfo_in;
+			driver_updateinfo_collisionWarn_conn : port this_vehicleOBe.collisionWarnDriverUpdate_out -> this_vehicleDatabus.collisionWarnInfoDrivUpdateInfo_in;
+			driver_inputinfo_hostvstat_conn : port this_vehicleDatabus.hostvehStatDrivInpInfo_out -> this_vehicleOBE.hostVehicleStatuseDriverInputInformation_in;
+			
+			vehicle_cntrlevent_locationMotionforSurv_conn : port this_vehicleOBE.vehControlEventLocationMotionForSurv_out -> this_roadsideEquipment.veControlEventLocationMotion_in;
+			vehicle_environmentData_conn : port this_vehicleOBE.vehEnvironmentData_out -> this_roadsideEquipment.veEnvironmentData_in;
+			vehicle_signageData_conn : port this_roadsideEquipment.vehSignData_out -> this_vehicleOBE.vehicleSignageData_in;
+			queue_warninginfo_conn : port this_roadsideEquipment.qWarnInfo_out -> this_vehicleOBE.queueWarningInformation_in;
+			vehicle_signagelocaldata_conn : port this_itsRoadwayEquipment.vehicleSignageLocalData_out -> this_roadsideEquipment.vehicleSignageLocalData_in;
+			traffic_situationdata_conn : port this_roadsideEquipment.trafSituationData_out -> this_itsRoadwayEquipment.trafficSituationData_in;
+			queue_warningAppStatus_conn : port this_roadsideEquipment.qWarnInfo_out -> this_traffMgmtCenter.queueWarnApplicationStatus_in;
+			queue_warningAppInformation_conn : port this_traffMgmtCenter.queueWarnApplicationInfo_out -> this_roadsideEquipment.queueWarningApplicationInformation_in;
+			traff_situDataEnvSituationData_conn : port this_roadsideEquipment.trafficSituationDataEnvData_out -> this_traffMgmtCenter.trafficEnvironmentSituationData_in;
+			environment_sensorData_conn : port this_itsRoadwayEquipment.envSensData_out -> this_traffMgmtCenter.environmentSensorData_in;
+			environment_sensorsControl_conn : port this_traffMgmtCenter.environmentSensorsCtrl_out -> this_itsRoadwayEquipment.environmentSensorControl_in;
+			roadway_warningSystemStatus_conn : port this_itsRoadwayEquipment.rdwayWarnSysStat_out -> this_traffMgmtCenter.roadwayWarningSystemStatus_in;
+			roadway_warningSystemControl_conn : port this_traffMgmtCenter.roadWarnSystemCtrl_out -> this_itsRoadwayEquipment.rodwayWarningSystemControl_in;
+			traffic_flowTrafficImgs_conn : port this_itsRoadwayEquipment.trafficFlowImgs_out -> this_traffMgmtCenter.trafficFlowImgs_in;
+			traffic_sensorCtrlTrafVidSurvControl_conn : port this_traffMgmtCenter.trafficSensorCtrlVidSurvCtrl_out -> this_itsRoadwayEquipment.trafficSensorandVideoControl_in;
+			traffic_operatorData_conn : port this_traffMgmtCenter.trafficOperationData_out -> this_traffOppPersonel.trafficOperationData_in;
+			traffic_operatorInput_conn : port this_traffOppPersonel.trafficOperationInput_out -> this_traffMgmtCenter.trafficOperationInputp_in;
+			road_networkConditions_conn : port this_traffMgmtCenter.roadNetworkConditions_out -> this_otherTrafficMgmtCenters.roadNetworkConditions_in;
+			road_NetworkConditionsintoTraffMgmtCenter_conn : port this_otherTrafficMgmtCenters.roadNetworkConditions_out -> this_traffMgmtCenter.roadNetworkConditions_in;
+			road_NetpwrokConditionsToTransportInfoCenter_conn : port this_traffMgmtCenter.roaddNetworkConditionsforTranspInfoCenter_out -> this_transInfoCenter.roadNetworkConditions_in;
+			vehicle_controlevent_locationMotion_conn : port this_remoteVehicleOBE.vehicleControlEventLocationMotion_out -> this_vehicleOBE.vehicleControlEventLocationMotion_in;
+			vehicle_controlevent_locationMotiontoRemObe_conn : port this_vehicleOBE.vehCtrlEventLocMotion2_out -> this_remoteVehicleOBE.vehicleConttrolEventLocationMotion_in;
+		flows
+			driver_input : end to end flow this_driver.input_source -> driver_input_conn -> this_vehicleOBE.system_dinput_sink;
+			driver_updates : end to end flow this_vehicleOBE.system_dupdate_source -> driver_updates_conn -> this_driver.update_sink;
+			driver_information : end to end flow this_itsRoadwayEquipment.system_dinfo_source -> driver_information_conn -> this_driver.info_sink;
+			driver_updateinfo_collisionWarn : end to end flow this_vehicleOBE.system_colwarndupdate_source -> driver_updateinfo_collisionWarn_conn -> this_vehicleDatabus.system_colwarninfodupdate_sink;
+			driver_inputinfo_hostvstat : end to end flow this_vehicleDatabus.system_hvstatdinpinfo_source -> driver_inputinfo_hostvstat_conn -> this_vehicleOBE.system_hvstatdrip_sink;
+			
+			vehicle_cntrlevent_locationMotionforSurv : end to end flow this_vehicleOBE.system_vcntrlloc_source -> vehicle_cntrlevent_locationMotionforSurv_conn -> this_roadsideEquipment.system_vcntrlloc_sink;
+			vehicle_environmentData : end to end flow this_vehicleOBE.system_venv_source -> vehicle_environmentData_conn -> this_roadsideEquipment.system_venv_sink;
+			vehicle_signageData : end to end flow this_roadsideEquipment.system_vsign_source -> vehicle_signageData_conn -> this_vehicleOBE.system_vsign_sink;
+			queue_warninginfo : end to end flow this_roadsideEquipment.system_qwarninfo_source -> queue_warninginfo_conn -> this_vehicleOBE.system_qwarninfo_sink;
+--			vehicle_signagelocaldata : end to end flow itsRoadwayEquipment.system_vsign_source -> vehicle_signagedata_conn -> vehicleOBE.system_vsign_sink;
+			traffic_situationdata : end to end flow this_roadsideEquipment.system_trasitu_source -> traffic_situationdata_conn -> this_itsRoadwayEquipment.system_situ_sink;
+--			queue_warningAppStatus : end to end flow this_roadsideEquipment.system_qwarnappstat_source -> queue_warningAppStatus_conn -> this_traffMgmtCenter.system_qwarnapp_sink;
+			queue_warningAppInformation : end to end flow this_traffMgmtCenter.system_qwarnappinfo_source -> queue_warningAppInformation_conn -> this_roadsideEquipment.system_qwarnapp_sink;
+			traff_situDataEnvSituationData : end to end flow this_roadsideEquipment.system_trsituenv_source -> traff_situDataEnvSituationData_conn -> this_traffMgmtCenter.system_trenvsitu_sink;
+			environment_sensorData : end to end flow this_itsRoadwayEquipment.system_sendata_source -> environment_sensorData_conn ->this_traffMgmtCenter.system_envsens_sink;
+			environment_sensorsControl: end to end flow this_traffMgmtCenter.system_envsenscntrl_source -> environment_sensorsControl_conn -> this_itsRoadwayEquipment.system_envsenscntrl_sink;
+			roadway_warningSystemStatus : end to end flow this_itsRoadwayEquipment.system_rdwarnstat_source -> roadway_warningSystemStatus_conn -> this_traffMgmtCenter.system_rwarnsys_sink;
+			roadway_warningSystemControl : end to end flow this_traffMgmtCenter.system_rwarnsyscntrl_source -> roadway_warningSystemControl_conn -> this_itsRoadwayEquipment.system_warsyscntrl_sink;
+			traffic_flowTrafficImgs : end to end flow this_itsRoadwayEquipment.system_flimg_source -> traffic_flowTrafficImgs_conn -> this_traffMgmtCenter.system_trflowimg_sink;
+			traffic_sensorCtrlTrafVidSurvControl : end to end flow this_traffMgmtCenter.system_trsenscntrlvidsurv_source -> traffic_sensorCtrlTrafVidSurvControl_conn -> this_itsRoadwayEquipment.system_sensorandVideovc_sink;
+			traffic_operatorData : end to end flow this_traffMgmtCenter.system_trafopdata_source -> traffic_operatorData_conn -> this_traffOppPersonel.trafopdata_sink;
+			traffic_operatorInput : end to end flow this_traffOppPersonel.trafopinp_source -> traffic_operatorInput_conn -> this_traffMgmtCenter.system_tropinp_sink;
+			road_networkConditions : end to end flow this_traffMgmtCenter.system_roadnetcond_source -> road_networkConditions_conn -> this_otherTrafficMgmtCenters.rdNetcond_sink;
+			road_NetworkConditionsintoTraffMgmtCenter : end to end flow this_otherTrafficMgmtCenters.rdNetcond_source -> road_NetworkConditionsintoTraffMgmtCenter_conn -> this_traffMgmtCenter.system_rdnetcond_sink;
+			road_NetpwrokConditionsToTransportInfoCenter : end to end flow this_traffMgmtCenter.system_rdnetcondforothers_source -> road_NetpwrokConditionsToTransportInfoCenter_conn -> this_transInfoCenter.rdnetcond_source;
+			vehicle_controlevent_locationMotion : end to end flow this_remoteVehicleOBE.system_vcntrleventloc_source -> vehicle_controlevent_locationMotion_conn -> this_vehicleOBE.system_vcntrlloc_sink;
+			vehicle_controlevent_locationMotiontoRemObe : end to end flow this_vehicleOBE.system_vcntrllocmot2_source -> vehicle_controlevent_locationMotiontoRemObe_conn -> this_remoteVehicleOBE.system_vcntrleventlocmot_sink;
+		properties
+			latency =>2ms .. 4ms applies to driver_input,driver_updates,driver_information,driver_updateinfo_collisionWarn;
+			latency => 3ms .. 5ms applies to vehicle_controlevent_locationMotion,vehicle_controlevent_locationMotiontoRemObe,vehicle_cntrlevent_locationMotionforSurv,vehicle_signageData;
+			latency => 1ms .. 3ms applies to environment_sensorData,traff_situDataEnvSituationData,queue_warningAppInformation;
+			latency => 5ms .. 8ms applies to driver_inputinfo_hostvstat,queue_warninginfo,traffic_flowTrafficImgs,traffic_sensorCtrlTrafVidSurvControl,road_networkConditions;
+	end CGDqueueWarning.impl;
+	
+end CGDintegratedSystem;

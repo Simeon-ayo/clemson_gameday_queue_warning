@@ -1,6 +1,6 @@
-package vehicleDatabus
+package CGDvehicleDatabus
 public
-	system vehicledbus
+	system cgdvehicledbus
 		features
 			collisionWarnInfoDrivUpdateInfo_in : in data port;
 			hostvehStatDrivInpInfo_out : out data port;
@@ -8,8 +8,8 @@ public
 		flows
 			system_colwarninfodupdate_sink : flow sink collisionWarnInfoDrivUpdateInfo_in;
 			system_hvstatdinpinfo_source : flow source hostvehStatDrivInpInfo_out;
-	end vehicledbus;
+	end cgdvehicledbus;
 	
-	system implementation vehicledbus.impl
-	end vehicledbus.impl;
-end vehicleDatabus;
+	system implementation cgdvehicledbus.impl
+	end cgdvehicledbus.impl;
+end CGDvehicleDatabus;

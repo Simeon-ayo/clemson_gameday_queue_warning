@@ -1,4 +1,4 @@
-system requirements qwarnsys_requirements for integratedSystem::queueWarning
+system requirements qwarnsys_requirements for CGDintegratedSystem::CGDqueueWarning
 [
 	val minimunQueue= 7.00
 	val maximumSpeed=70.00

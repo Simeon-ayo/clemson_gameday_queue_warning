@@ -1,6 +1,6 @@
-package traffOppPersonel
+package CGDtraffOppPersonel
 public
-	system trafOpPers
+	system cgdtrafOpPers
 		features
 			trafficOperationInput_out :out data port;
 			trafficOperationData_in : in data port;
@@ -8,9 +8,9 @@ public
 		flows
 			trafopdata_sink : flow sink trafficOperationData_in;
 			trafopinp_source : flow source trafficOperationInput_out;
-	end trafOpPers;
+	end cgdtrafOpPers;
 	
-	system implementation trafOpPers.impl
-	end trafOpPers.impl;
+	system implementation cgdtrafOpPers.impl
+	end cgdtrafOpPers.impl;
 	
-end traffOppPersonel;
+end CGDtraffOppPersonel;

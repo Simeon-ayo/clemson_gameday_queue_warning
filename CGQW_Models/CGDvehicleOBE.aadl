@@ -1,6 +1,6 @@
-package vehicleOBE
+package CGDvehicleOBE
 public
-	system vobe
+	system cgdvobe
 		features
 			queueWarningInformation_in:in data port;
 			vehicleSignageData_in : in data port;
@@ -24,15 +24,15 @@ public
 			system_vcntrllocmot2_source : flow source vehCtrlEventLocMotion2_out;
 			system_dupdate_source : flow source driverUpdates_out;
 			system_colwarndupdate_source : flow source collisionWarnDriverUpdate_out;
-	end vobe;
-	system implementation vobe.impl
+	end cgdvobe;
+	system implementation cgdvobe.impl
 		subcomponents 
 			vqwarn:system vqwarn.impl;
 			vroadinforecpt:system vroadinforecpt.impl;
 			venvmonitor:system venvmonitor.impl;
 			vbasafety:system vbasafety.impl;
 			
-	end vobe.impl;
+	end cgdvobe.impl;
 	
 	system vqwarn
 	end vqwarn;
@@ -236,4 +236,4 @@ public
 	end routeguide.impl;
 	
 	
-end vehicleOBE;
+end CGDvehicleOBE;

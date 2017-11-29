@@ -1,4 +1,4 @@
-stakeholder goals qwarnsys_Goals for integratedSystem::queueWarning
+stakeholder goals qwarnsys_Goals for CGDintegratedSystem::CGDqueueWarning
 [
 	goal g1 : "safety" [
 		description "This life-critical system's main goal should be on the overall safety and security"

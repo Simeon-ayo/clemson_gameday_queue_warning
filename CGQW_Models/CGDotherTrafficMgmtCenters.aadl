@@ -1,6 +1,6 @@
-package otherTrafficMgmtCenters
+package CGDotherTrafficMgmtCenters
 public
-	system othertrafmgmtcent
+	system cgdothertrafmgmtcent
 		
 		features		
 		roadNetworkConditions_in : in data port;
@@ -10,8 +10,8 @@ public
 		rdNetcond_sink : flow sink roadNetworkConditions_in;
 		rdNetcond_source : flow source roadNetworkConditions_out;
 		
-	end othertrafmgmtcent;
+	end cgdothertrafmgmtcent;
 	
-	system implementation othertrafmgmtcent.impl
-	end othertrafmgmtcent.impl;
-end otherTrafficMgmtCenters;
+	system implementation cgdothertrafmgmtcent.impl
+	end cgdothertrafmgmtcent.impl;
+end CGDotherTrafficMgmtCenters;

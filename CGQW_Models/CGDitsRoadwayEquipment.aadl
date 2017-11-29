@@ -1,6 +1,6 @@
-package itsRoadwayEquipment
+package CGDitsRoadwayEquipment
 public
-	system itsrequip
+	system cgditsrequip
 		features
 			trafficSensorandVideoControl_in : in data port;
 			rodwayWarningSystemControl_in : in data port;
@@ -10,7 +10,7 @@ public
 			rdwayWarnSysStat_out : out data port;
 			envSensData_out : out data port;
 			vehicleSignageLocalData_out : out data port;
-			driverInfo_out : out data port;
+			DriverInfo_out : out data port;
 			
 		flows
 			system_sensorandVideovc_sink : flow sink trafficSensorandVideoControl_in;
@@ -21,16 +21,16 @@ public
 			system_rdwarnstat_source : flow source rdwayWarnSysStat_out;
 			system_sendata_source : flow source envSensData_out;
 			system_vsign_source : flow source vehicleSignageLocalData_out;
-			system_dinfo_source : flow source driverInfo_out;
-	end itsrequip;
+			system_dinfo_source : flow source DriverInfo_out;
+	end cgditsrequip;
 
-	system implementation itsrequip.impl
+	system implementation cgditsrequip.impl
 		subcomponents
 			rowarn : system rowarn.impl;
 			renmon : system renmon.impl;
 			rbsurv : system rbsurv.impl;
 			
-	end itsrequip.impl;
+	end cgditsrequip.impl;
 	
 	system rowarn
 	end rowarn;
@@ -154,4 +154,4 @@ public
 	
 	
 	
-end itsRoadwayEquipment;
+end CGDitsRoadwayEquipment;

@@ -1,6 +1,6 @@
-package roadsideEquipment
+package CGDroadsideEquipment
 public
-	system rodequip
+	system cgdrodequip
 		features
 			queueWarningApplicationInformation_in : in data port;
 			vehicleSignageLocalData_in : in data port;
@@ -22,14 +22,14 @@ public
 			system_trasitu_source : flow source trafSituationData_out;
 			system_qwarninfo_source : flow source qWarnInfo_out;
 			system_vsign_source : flow source vehSignData_out;
-	end rodequip;
+	end cgdrodequip;
 	
-	system implementation rodequip.impl
+	system implementation cgdrodequip.impl
 		subcomponents
 			rse_qwarning : system rse_qwarning.impl;
 			rse_envmonitoring : system rse_envmonitoring.impl;
 			rse_trafmonitoring: system rse_trafmonitoring.impl;
-	end rodequip.impl;
+	end cgdrodequip.impl;
 	
 	system rse_qwarning
 	end rse_qwarning;
@@ -161,4 +161,4 @@ public
 	thread implementation intercomData.impl
 	end intercomData.impl;
 	
-end roadsideEquipment;
+end CGDroadsideEquipment;

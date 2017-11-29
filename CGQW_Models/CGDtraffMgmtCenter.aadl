@@ -1,6 +1,6 @@
-package traffMgmtCenter
+package CGDtraffMgmtCenter
 public
-	system trafcenter
+	system cgdtrafcenter
 		features
 			trafficFlowImgs_in: in data port;
 			roadwayWarningSystemStatus_in: in data port;
@@ -32,14 +32,14 @@ public
 			system_roadnetcond_source : flow source roadNetworkConditions_out;
 			system_rdnetcondforothers_source: flow source roaddNetworkConditionsforTranspInfoCenter_out;
 			system_trafopdata_source : flow source trafficOperationData_out;	 
-	end trafcenter;
+	end cgdtrafcenter;
 	
-	system implementation trafcenter.impl
+	system implementation cgdtrafcenter.impl
 		subcomponents
 			tmc_rdwarning : system tmc_rdwarning.impl;
 			tmc_enmon : system tmc_enmon.impl;
 			tmc_trafsurv : system tmc_trafsurv.impl;
-	end trafcenter.impl;
+	end cgdtrafcenter.impl;
 	
 	system tmc_rdwarning
 	end tmc_rdwarning;
@@ -156,4 +156,4 @@ public
 	thread implementation manageLanes.impl
 	end manageLanes.impl;
 	
-end traffMgmtCenter;
+end CGDtraffMgmtCenter;
