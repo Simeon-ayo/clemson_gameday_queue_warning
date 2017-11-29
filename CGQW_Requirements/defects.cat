@@ -1,0 +1,47 @@
+// NASA's Orthogonal Defect Classification
+
+FlightOperations [
+	DataAccess Delivery  
+	HardwareFailure
+	NormalActivity 
+	Recovery
+	SpecialProcedure 
+]
+SystemTest [
+	CmdSeqTest 
+	HardwareConfiguration
+	Inspection Review
+	SoftwareConfiguration
+	Start Restart Shutdown
+]
+BuidPackage [
+	InstallDependency 
+	InstallationDependency
+	PackagingScript
+]
+FlightSoftware [
+	Assignment Initialzation
+	Function Algorithm
+	Interfaces
+	Timing
+]
+GroundResources [
+	ResourceConflict
+]
+GroundSoftware [
+	Assignment Initialization
+	Function Algorithm
+	Interfaces
+	Timing
+]
+Hardare [
+	Hardware
+]
+InformationDevelopment [
+	Documentation
+	Procedures
+]
+NoneUnknown [
+	NothingFixed
+	Unknown
+]

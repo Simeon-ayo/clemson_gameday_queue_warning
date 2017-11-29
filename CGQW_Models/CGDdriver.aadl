@@ -1,18 +1,39 @@
 package CGDdriver
 public
+	with EMV2;
+	with error_library;
+	
 	abstract cgdDriver
 		features
 			driverInput_out : out data port ;
 			driverInfo_in : in data port;
-			driverUpdates_in : in data port ;
-		
+			driverUpdates_in : in data port ;		
 		flows
 			input_source : flow source driverInput_out;
 			info_sink : flow sink driverInfo_in;
 			update_sink : flow sink driverUpdates_in;			
+		properties
+			latency => 1 ms .. 3 ms applies to driverUpdates_in, driverInput_out;
+		
+		annex EMV2 {**
+			use types error_library; 
+		
+			error propagations
+				driverInput_out : out propagation {NoValue};
+			flows
+				ef0 : error source driverInput_out{NoValue};
+			end propagations;
+			properties
+				emv2::hazards => 
+					([failure => "Novalue";	
+				  	description => "No data from the vehicle driver";
+					])
+			applies to driverInput_out.novalue;
+		**};	 
+						
 	end cgdDriver;
 	
-	abstract implementation cgdDriver.impl		
+	abstract implementation cgdDriver.impl			
 	end cgdDriver.impl;
 	
 end CGDdriver;
