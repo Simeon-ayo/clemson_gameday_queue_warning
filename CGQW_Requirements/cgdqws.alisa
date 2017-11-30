@@ -1,0 +1,83 @@
+assurance case CGDQWSassuranceplan : "assurance case for clemson gameday queue warning system" [
+assurance plan for cgdwqs
+[
+		description "This document contanins the assurance case for the Queue Warning System that will be implemented for Clemson game day"
+		assure cgdqwsvPlan
+		assure subsystem driver
+		assume subsystem traffic management center
+		assume subsystem roadside equipment
+		assume subsystem its roadway equipment
+		assume subsystem remote vehicle obe
+		assume subsystem traffic operation personel
+		assume subsystem traffic information center
+		assume subsystem vehicle databus
+		assume subsystem vehicle obe
+		
+]
+
+AssurancePlan ::=
+assurance plan name : "Assurance plan for the Clemson Game Day Queue Warning System" 
+for cgdqws
+[
+ 	description "Check if all functionality of cgdqws works as expected " 
+
+ 	assure <verification plan reference> cgdqwsvPlan
+ 	assure subsystem <all>
+ 	issues "Check for all the possible issues in cgdqws"      
+]
+
+assurance task driver [
+	
+		description "communication loss" 
+		category Quality.interface failed nonfunctional quality.Efficiency quality.reliability 
+		issues "communication loss between driver and vehicle could result in the complete failure of the system "
+	]
+	assurance task traffic management center [
+	
+		description "Information loss" 
+		category Quality.hardware failed nonfunctional
+		issues "Invalid or incorrect traffic flow and images may be sent from ITS roadway equipment, may result in malfunctioning of traffic management center"
+	]
+	assurance task roadside equipment [
+	
+		description "incorrect data exchange" 
+		category Quality.hardware failed nonfunctional quality.interoperability quality.user_friendly
+		issues "Invalid data exchange may happen between ITS roadway equipment and roadside equipment"
+	]
+	assurance task its roadway equipment [
+	
+		description "invalid envionmental monitoring data" 
+		category Quality.hardware failed quality.scalability
+		issues "wrong envionmental monitoring data road conditions, surface weather value may result in malfunctioning of system "
+	]
+	assurance task remote vehicle obe [
+	
+		description "Wrong data" 
+		category Quality.hardware failed nonfunctional quality.Efficiency quality.reliability 
+		issues "vehicle control event , vehicle location and motion data may not be correctly sent by vehicle OBE"
+	]
+	assurance task traffic operation personel [
+	
+		description "Data and command input failure" 
+		category Quality.safety failed nonfunctional
+		issues "Traffic personel interact with various systems like traffic control systems, surveillance systems to provide operator data and command inputs , whose failure will result in system malfunctioning "
+	]
+	assurance task traffic information center [
+	
+		description "Delivery of traveler information failure" 
+		category Quality.safety failed nonfunctional  quality.recoverability 
+		issues "Traveler Information such as basic advisories, traffic and road conditions are provided to subscribers and public, whose foilure affect the overall functioning of system"
+	]
+	assurance task vehicle databus [
+	
+		description "communication failure" 
+		category Quality.checking failed nonfunctional
+		issues "communication between the Vehicle OBE and other vehicle systems to support connected vehicle application may fail"
+	]
+	assurance task vehicle obe [
+	
+		description "Interfaces and function failuress" 
+		category Quality.safety failed nonfunctional quality.upgradability
+		issues "Vehicle OBE includes the common interfaces and functions that apply to all motorized vehicles thats critical to the correct operation of system"
+	]
+]
