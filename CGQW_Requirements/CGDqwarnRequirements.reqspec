@@ -13,11 +13,11 @@ system requirements qwarnsys_requirements for CGDintegratedSystem::CGDqueueWarni
 	
 	
 	
-	requirement sendorSignalStrength : "The vehicle OBE and sensors shall have high signal strength to receive information"
+	requirement signalStrength : "The vehicle OBE and sensors shall have high signal strength to receive information"
 	[
 		description this " The sensors shall be able to send data to a high degree of precision"
 		compute signalStrength:real
-		value predicate signalStrength <= minimumresponseTime
+		value predicate  minimumStrength <= signalStrength
 		rationale "This is a critical component because the system is dependent on the sensors in order to make queue decisions and predictions"
 		see goal qwarnsys_Goals.g1 qwarnsys_Goals.g5 qwarnsys_Goals.g6
 		issues "Integrity Level 4"
@@ -27,7 +27,7 @@ system requirements qwarnsys_requirements for CGDintegratedSystem::CGDqueueWarni
 	[
 		description this "system must be able to operate even in the event of failure minimizing harm to other systems"
 		compute systemResponseTime:real
-		value predicate systemResponseTime >= minimumStrength
+		value predicate  minimumresponseTime >= systemResponseTime
 		rationale "the control systems may fail and this system must cope by either going to a safe state or by operating with other systems"
 		mitigates "damage caused due to failure of components"
 		see goal qwarnsys_Goals.g1 qwarnsys_Goals.g2

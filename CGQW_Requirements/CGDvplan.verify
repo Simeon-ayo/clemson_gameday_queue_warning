@@ -1,0 +1,46 @@
+// Copyright 2016 Carnegie Mellon University. See Notice.txt
+// Distribution Statement A: Approved for Public Release; Distribution is Unlimited.
+verification plan cgdvplan for qwarnsys_requirements 
+[
+	claim signalStrength [
+		activities
+			signalstrength : Plugins.NetworkUtilizationAnalysis()
+			   [ category Quality.NetworkUtilization ]
+			SignalStrength : Resolute.verifySignalStrength(minimumStrength) [ category Quality.Availability ]
+	]
+	
+	claim operationalFailure [
+		activities
+			responsetime : Plugins.FlowLatencyAnalysis() 
+			timing: Plugins.ResourceAllocationScheduling()
+		assert timing then responsetime
+	]
+	
+	claim detectQueueFormation [
+		activities
+			queueDetection : Plugins.PortDataConsistency()
+			   [ category Quality.State ]
+			noOfVehicles : Resolute.verifyQueueFormation(noOfVehicles) [ category Quality.State ]
+	]
+
+	claim individulized_warning [
+	]
+
+	claim accurate_system [
+	]
+
+	claim reliable_system [
+	]
+
+	claim accurateSpeed [
+	]
+
+	claim predictQueue [
+	]
+
+	claim interoperable_system [
+	]
+
+	claim generate_respStrategies [
+	]
+] 
