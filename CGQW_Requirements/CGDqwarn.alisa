@@ -1,83 +1,72 @@
-assurance case CGDQWSassuranceplan : "assurance case for clemson gameday queue warning system" [
-assurance plan for cgdwqs
+assurance case CGDQWS for CGDintegratedSystem::CGDqueueWarning[
+assurance plan CgdqwsDemo for CGDintegratedSystem::CGDqueueWarning.impl
 [
-		description "This document contanins the assurance case for the Queue Warning System that will be implemented for Clemson game day"
-		assure cgdqwsvPlan
-		assure subsystem driver
-		assume subsystem traffic management center
-		assume subsystem roadside equipment
-		assume subsystem its roadway equipment
-		assume subsystem remote vehicle obe
-		assume subsystem traffic operation personel
-		assume subsystem traffic information center
-		assume subsystem vehicle databus
-		assume subsystem vehicle obe
+		
+		assure cgdvplan
+		assure subsystem all
+		assume subsystem all
+		
 		
 ]
 
-AssurancePlan ::=
-assurance plan name : "Assurance plan for the Clemson Game Day Queue Warning System" 
-for cgdqws
-[
- 	description "Check if all functionality of cgdqws works as expected " 
-
- 	assure <verification plan reference> cgdqwsvPlan
- 	assure subsystem <all>
- 	issues "Check for all the possible issues in cgdqws"      
-]
-
-assurance task driver [
+assurance task signalStrength [
 	
-		description "communication loss" 
-		category Quality.interface failed nonfunctional quality.Efficiency quality.reliability 
-		issues "communication loss between driver and vehicle could result in the complete failure of the system "
+		description "Task to verify signal strength between the vehicle OBE and sensors to receive information"
+		category Quality.interface Quality.NetworkUtilization  Quality.Efficiency Quality.Reliability 
+		
 	]
-	assurance task traffic management center [
+	assurance task operationalFailure [
 	
-		description "Information loss" 
-		category Quality.hardware failed nonfunctional
-		issues "Invalid or incorrect traffic flow and images may be sent from ITS roadway equipment, may result in malfunctioning of traffic management center"
+		description "Task to verufy if the system continue to operate even during failure of certain components" 
+		category Quality.State Quality.nonfunctional
+		 
 	]
-	assurance task roadside equipment [
+	assurance task detectQueueFormation [
 	
-		description "incorrect data exchange" 
-		category Quality.hardware failed nonfunctional quality.interoperability quality.user_friendly
-		issues "Invalid data exchange may happen between ITS roadway equipment and roadside equipment"
+		description "Task to verify if queue formation is detected correctly" 
+		category Quality.Timing Kind.Guarantee
+		
 	]
-	assurance task its roadway equipment [
+	assurance task individulized_warning [
 	
-		description "invalid envionmental monitoring data" 
-		category Quality.hardware failed quality.scalability
-		issues "wrong envionmental monitoring data road conditions, surface weather value may result in malfunctioning of system "
+		description "Task to verify if individualized queue warnings are generated based on vehicle's distance to the end of the queue" 
+		category Quality.hardware Kind.Guarantee
+		
 	]
-	assurance task remote vehicle obe [
+	assurance task accurate_system [
 	
-		description "Wrong data" 
-		category Quality.hardware failed nonfunctional quality.Efficiency quality.reliability 
-		issues "vehicle control event , vehicle location and motion data may not be correctly sent by vehicle OBE"
+		description "Task to check if the system can handle accurate values of vehicle speed, location, position in queue" 
+		category Quality.Efficiency Kind.Consistency
+		
 	]
-	assurance task traffic operation personel [
+	assurance task reliable_system [
 	
-		description "Data and command input failure" 
-		category Quality.safety failed nonfunctional
-		issues "Traffic personel interact with various systems like traffic control systems, surveillance systems to provide operator data and command inputs , whose failure will result in system malfunctioning "
+		description "Task to verify that system can have failure-free software operation for a specified period of time in a given environment" 
+		category Quality.Reliability Quality.Availability
+		
 	]
-	assurance task traffic information center [
+	assurance task accurateSpeed [
 	
-		description "Delivery of traveler information failure" 
-		category Quality.safety failed nonfunctional  quality.recoverability 
-		issues "Traveler Information such as basic advisories, traffic and road conditions are provided to subscribers and public, whose foilure affect the overall functioning of system"
+		description "Task to verify that system  supports accurate values of velocity that is being recommended to the driver based  on distance to the queue dynamically" 
+		category Quality.Efficiency Quality.Behavior Kind.Guarantee
+		
 	]
-	assurance task vehicle databus [
+	assurance task predictQueue [
 	
-		description "communication failure" 
-		category Quality.checking failed nonfunctional
-		issues "communication between the Vehicle OBE and other vehicle systems to support connected vehicle application may fail"
+		description "Task to verify that the system  predicts impending queues" 
+		category Quality.Behavior Kind.Consistency
+		
 	]
-	assurance task vehicle obe [
+	assurance task interoperable_system [
 	
-		description "Interfaces and function failuress" 
-		category Quality.safety failed nonfunctional quality.upgradability
-		issues "Vehicle OBE includes the common interfaces and functions that apply to all motorized vehicles thats critical to the correct operation of system"
+		description "Task to verify that the system operates well with other systems in order to achieve its function" 
+		category Quality.Behavior Kind.Consistency
+		
+	]
+	assurance task generate_respStrategies [
+	
+		description "Task to verify that the system  generates response strategies to the driver" 
+		category Quality.Behavior Quality.Timing
+		
 	]
 ]

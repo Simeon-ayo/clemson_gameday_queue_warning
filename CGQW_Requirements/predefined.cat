@@ -1,7 +1,7 @@
 Quality [
-	Behavior State  
+	Behavior State  failed Efficiency nonfunctional
 	Latency Timing Security Safety Reliability Availability
-	CPUUtilization MemoryUtilization 
+	CPUUtilization MemoryUtilization interface hardware
 	NetworkUtilization  Mass ElectricalPower BrakePressure
 ]
 Phase [
