@@ -5,7 +5,12 @@ verification methods Resolute [
 	validation validateWeightBudgetCoveragePercent()
 	]
 	
-	method verifyQueueFormation ( numberOfVehicles: real ) : "Verify signalStrength of vehicle OBE and sensors do not go below minimum" [
+	method verifyQueueFormation ( numberOfVehicles: real ) : "Verify queue formation when number of vehicle go below minimum" [
+		resolute  AssureRecursivetotals 
+	validation validateWeightBudgetCoveragePercent()
+	]
+	
+	method verifyWarnings ( numberOfWarnings: real ) : "Verify signalStrength of vehicle OBE and sensors do not go below minimum" [
 		resolute  AssureRecursivetotals 
 	validation validateWeightBudgetCoveragePercent()
 	]

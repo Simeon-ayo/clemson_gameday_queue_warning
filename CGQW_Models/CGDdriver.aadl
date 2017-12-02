@@ -2,16 +2,26 @@ package CGDdriver
 public
 	with EMV2;
 	with error_library;
+	with Base_Types;
 	
 	abstract cgdDriver
 		features
-			driverInput_out : out data port ;
-			driverInfo_in : in data port;
-			driverUpdates_in : in data port ;		
+			driverInput_out : out data port Base_Types::Boolean;
+			driverInfo_in : in data port Base_Types::Integer;
+			driverUpdates_in : in data port Base_Types::Integer;	
 		flows
 			input_source : flow source driverInput_out;
 			info_sink : flow sink driverInfo_in;
-			update_sink : flow sink driverUpdates_in;			
+			update_sink : flow sink driverUpdates_in;	
+		
+		annex agree{**
+			assume "size of driver input data" : driverInfo_in = 0;
+			assume "size of update data" : driverUpdates_in = 0;
+			
+			guarantee "no output without driver input data" : driverInfo_in < 1 => driverInput_out;
+			guarantee "Output is empty when ther is no update" : driverUpdates_in < 1 => driverInput_out;
+			guarantee "when both imputs get no data, then no output" : (driverInfo_in + driverUpdates_in) < 1 => driverInput_out;
+			**};		
 		
 		annex EMV2 {**
 			use types error_library; 
@@ -31,11 +41,17 @@ public
 				  	description => "No data from the vehicle driver";
 					])
 			applies to driverInput_out.novalue;
-		**};	 
-						
+		**};			
 	end cgdDriver;
 	
-	abstract implementation cgdDriver.impl			
+	abstract implementation cgdDriver.impl	
+		annex agree{**
+			assert driverInput_out = 
+			if driverInfo_in <= 0 or driverUpdates_in <= 0 then
+				true
+			else
+				false;
+			**};
 	end cgdDriver.impl;
 	
 end CGDdriver;

@@ -3,8 +3,7 @@
 package BudgetResolute
 public 
 
-annex Resolute {**
-		
+annex Resolute {**		
 	
 	-- requirement expressed in terms of the Maximum weight constant
 
