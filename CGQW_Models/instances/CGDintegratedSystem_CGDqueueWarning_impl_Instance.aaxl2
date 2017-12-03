@@ -6,10 +6,10 @@
         <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:NamedValue">
-            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.6"/>
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
       </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDdriver.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
     </featureInstance>
@@ -52,30 +52,111 @@
   </componentInstance>
   <componentInstance name="this_itsRoadwayEquipment" category="system">
     <featureInstance name="trafficSensorandVideoControl_in">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDitsRoadwayEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
     </featureInstance>
     <featureInstance name="rodwayWarningSystemControl_in">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDitsRoadwayEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
     </featureInstance>
     <featureInstance name="environmentSensorControl_in">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDitsRoadwayEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
     </featureInstance>
     <featureInstance name="trafficSituationData_in">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDitsRoadwayEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
     </featureInstance>
     <featureInstance name="trafficFlowImgs_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDitsRoadwayEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
     </featureInstance>
     <featureInstance name="rdwayWarnSysStat_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDitsRoadwayEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
     </featureInstance>
     <featureInstance name="envSensData_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDitsRoadwayEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
     </featureInstance>
     <featureInstance name="vehicleSignageLocalData_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDitsRoadwayEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
     </featureInstance>
     <featureInstance name="DriverInfo_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.6"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDitsRoadwayEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.8"/>
     </featureInstance>
     <componentInstance name="rowarn" category="system">
@@ -239,30 +320,102 @@
   </componentInstance>
   <componentInstance name="this_roadsideEquipment" category="system">
     <featureInstance name="queueWarningApplicationInformation_in">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
     </featureInstance>
     <featureInstance name="vehicleSignageLocalData_in">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
     </featureInstance>
     <featureInstance name="veEnvironmentData_in">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
     </featureInstance>
     <featureInstance name="veControlEventLocationMotion_in">
       <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
     </featureInstance>
     <featureInstance name="trafficSituationDataEnvData_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
     </featureInstance>
     <featureInstance name="queueWarnAppStatus_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
     </featureInstance>
     <featureInstance name="trafSituationData_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
     </featureInstance>
     <featureInstance name="qWarnInfo_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
     </featureInstance>
     <featureInstance name="vehSignData_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.8"/>
     </featureInstance>
     <componentInstance name="rse_qwarning" category="system">
@@ -931,9 +1084,27 @@
   </componentInstance>
   <componentInstance name="this_remoteVehicleOBE" category="system">
     <featureInstance name="vehicleControlEventLocationMotion_out" direction="out">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDremoteVehicleOBE.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
     </featureInstance>
     <featureInstance name="vehicleConttrolEventLocationMotion_in">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
       <feature xsi:type="aadl2:DataPort" href="../CGDremoteVehicleOBE.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
     </featureInstance>
     <flowSpecification name="system_vcntrleventloc_source" destination="//@componentInstance.9/@featureInstance.0">
@@ -947,303 +1118,76 @@
     <classifier xsi:type="aadl2:SystemImplementation" href="../CGDremoteVehicleOBE.aadl#CGDremoteVehicleOBE.cgdremvehobe.impl"/>
   </componentInstance>
   <endToEndFlow name="driver_input" flowElement="//@componentInstance.0/@flowSpecification.0 //@connectionInstance.0 //@componentInstance.8/@flowSpecification.3">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="2">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="4">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
-    </ownedPropertyAssociation>
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.0"/>
   </endToEndFlow>
-  <endToEndFlow name="driver_updates" flowElement="//@componentInstance.8/@flowSpecification.8 //@connectionInstance.24 //@componentInstance.0/@flowSpecification.2">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="2">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="4">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="driver_updates" flowElement="//@componentInstance.8/@flowSpecification.8 //@connectionInstance.22 //@componentInstance.0/@flowSpecification.2">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.1"/>
   </endToEndFlow>
-  <endToEndFlow name="driver_information" flowElement="//@componentInstance.1/@flowSpecification.8 //@connectionInstance.5 //@componentInstance.0/@flowSpecification.1">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="2">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="4">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="driver_information" flowElement="//@componentInstance.1/@flowSpecification.8 //@connectionInstance.4 //@componentInstance.0/@flowSpecification.1">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.2"/>
   </endToEndFlow>
-  <endToEndFlow name="driver_updateinfo_collisionWarn" flowElement="//@componentInstance.8/@flowSpecification.9 //@connectionInstance.25 //@componentInstance.7/@flowSpecification.0">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="2">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="4">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="driver_updateinfo_collisionWarn" flowElement="//@componentInstance.8/@flowSpecification.9 //@connectionInstance.23 //@componentInstance.7/@flowSpecification.0">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.3"/>
   </endToEndFlow>
-  <endToEndFlow name="driver_inputinfo_hostvstat" flowElement="//@componentInstance.7/@flowSpecification.1 //@connectionInstance.20 //@componentInstance.8/@flowSpecification.4">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="5">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="8">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.3"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="driver_inputinfo_hostvstat" flowElement="//@componentInstance.7/@flowSpecification.1 //@connectionInstance.18 //@componentInstance.8/@flowSpecification.4">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.4"/>
   </endToEndFlow>
-  <endToEndFlow name="vehicle_cntrlevent_locationMotionforSurv" flowElement="//@componentInstance.8/@flowSpecification.6 //@connectionInstance.22 //@componentInstance.3/@flowSpecification.3">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="3">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="5">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="vehicle_cntrlevent_locationMotionforSurv" flowElement="//@componentInstance.8/@flowSpecification.6 //@connectionInstance.20 //@componentInstance.3/@flowSpecification.3">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.5"/>
   </endToEndFlow>
-  <endToEndFlow name="vehicle_environmentData" flowElement="//@componentInstance.8/@flowSpecification.5 //@connectionInstance.21 //@componentInstance.3/@flowSpecification.2">
+  <endToEndFlow name="vehicle_environmentData" flowElement="//@componentInstance.8/@flowSpecification.5 //@connectionInstance.19 //@componentInstance.3/@flowSpecification.2">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.6"/>
   </endToEndFlow>
-  <endToEndFlow name="vehicle_signageData" flowElement="//@componentInstance.3/@flowSpecification.8 //@connectionInstance.11 //@componentInstance.8/@flowSpecification.1">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="3">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="5">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="vehicle_signageData" flowElement="//@componentInstance.3/@flowSpecification.8 //@connectionInstance.9 //@componentInstance.8/@flowSpecification.1">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.7"/>
   </endToEndFlow>
-  <endToEndFlow name="queue_warninginfo" flowElement="//@componentInstance.3/@flowSpecification.7 //@connectionInstance.9 //@componentInstance.8/@flowSpecification.0">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="5">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="8">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.3"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="queue_warninginfo" flowElement="//@componentInstance.3/@flowSpecification.7 //@connectionInstance.7 //@componentInstance.8/@flowSpecification.0">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.8"/>
   </endToEndFlow>
-  <endToEndFlow name="traffic_situationdata" flowElement="//@componentInstance.3/@flowSpecification.6 //@connectionInstance.8 //@componentInstance.1/@flowSpecification.3">
+  <endToEndFlow name="queue_warningAppInformation" flowElement="//@componentInstance.4/@flowSpecification.10 //@connectionInstance.13 //@componentInstance.3/@flowSpecification.0">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.9"/>
   </endToEndFlow>
-  <endToEndFlow name="queue_warningAppInformation" flowElement="//@componentInstance.4/@flowSpecification.10 //@connectionInstance.15 //@componentInstance.3/@flowSpecification.0">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="1">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="3">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="traff_situDataEnvSituationData" flowElement="//@componentInstance.3/@flowSpecification.4 //@connectionInstance.6 //@componentInstance.4/@flowSpecification.3">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.10"/>
   </endToEndFlow>
-  <endToEndFlow name="traff_situDataEnvSituationData" flowElement="//@componentInstance.3/@flowSpecification.4 //@connectionInstance.7 //@componentInstance.4/@flowSpecification.3">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="1">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="3">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="environment_sensorData" flowElement="//@componentInstance.1/@flowSpecification.6 //@connectionInstance.3 //@componentInstance.4/@flowSpecification.2">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.11"/>
   </endToEndFlow>
-  <endToEndFlow name="environment_sensorData" flowElement="//@componentInstance.1/@flowSpecification.6 //@connectionInstance.3 //@componentInstance.4/@flowSpecification.2">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="1">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="3">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="environment_sensorsControl" flowElement="//@componentInstance.4/@flowSpecification.9 //@connectionInstance.12 //@componentInstance.1/@flowSpecification.2">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.12"/>
   </endToEndFlow>
-  <endToEndFlow name="environment_sensorsControl" flowElement="//@componentInstance.4/@flowSpecification.9 //@connectionInstance.14 //@componentInstance.1/@flowSpecification.2">
+  <endToEndFlow name="roadway_warningSystemStatus" flowElement="//@componentInstance.1/@flowSpecification.5 //@connectionInstance.2 //@componentInstance.4/@flowSpecification.1">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.13"/>
   </endToEndFlow>
-  <endToEndFlow name="roadway_warningSystemStatus" flowElement="//@componentInstance.1/@flowSpecification.5 //@connectionInstance.2 //@componentInstance.4/@flowSpecification.1">
+  <endToEndFlow name="roadway_warningSystemControl" flowElement="//@componentInstance.4/@flowSpecification.8 //@connectionInstance.11 //@componentInstance.1/@flowSpecification.1">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.14"/>
   </endToEndFlow>
-  <endToEndFlow name="roadway_warningSystemControl" flowElement="//@componentInstance.4/@flowSpecification.8 //@connectionInstance.13 //@componentInstance.1/@flowSpecification.1">
+  <endToEndFlow name="traffic_flowTrafficImgs" flowElement="//@componentInstance.1/@flowSpecification.4 //@connectionInstance.1 //@componentInstance.4/@flowSpecification.0">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.15"/>
   </endToEndFlow>
-  <endToEndFlow name="traffic_flowTrafficImgs" flowElement="//@componentInstance.1/@flowSpecification.4 //@connectionInstance.1 //@componentInstance.4/@flowSpecification.0">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="5">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="8">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.3"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="traffic_sensorCtrlTrafVidSurvControl" flowElement="//@componentInstance.4/@flowSpecification.7 //@connectionInstance.10 //@componentInstance.1/@flowSpecification.0">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.16"/>
   </endToEndFlow>
-  <endToEndFlow name="traffic_sensorCtrlTrafVidSurvControl" flowElement="//@componentInstance.4/@flowSpecification.7 //@connectionInstance.12 //@componentInstance.1/@flowSpecification.0">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="5">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="8">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.3"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="traffic_operatorData" flowElement="//@componentInstance.4/@flowSpecification.13 //@connectionInstance.16 //@componentInstance.5/@flowSpecification.0">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.17"/>
   </endToEndFlow>
-  <endToEndFlow name="traffic_operatorData" flowElement="//@componentInstance.4/@flowSpecification.13 //@connectionInstance.18 //@componentInstance.5/@flowSpecification.0">
+  <endToEndFlow name="traffic_operatorInput" flowElement="//@componentInstance.5/@flowSpecification.1 //@connectionInstance.17 //@componentInstance.4/@flowSpecification.6">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.18"/>
   </endToEndFlow>
-  <endToEndFlow name="traffic_operatorInput" flowElement="//@componentInstance.5/@flowSpecification.1 //@connectionInstance.19 //@componentInstance.4/@flowSpecification.6">
+  <endToEndFlow name="road_networkConditions" flowElement="//@componentInstance.4/@flowSpecification.11 //@connectionInstance.14 //@componentInstance.2/@flowSpecification.0">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.19"/>
   </endToEndFlow>
-  <endToEndFlow name="road_networkConditions" flowElement="//@componentInstance.4/@flowSpecification.11 //@connectionInstance.16 //@componentInstance.2/@flowSpecification.0">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="5">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="8">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.3"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="road_NetworkConditionsintoTraffMgmtCenter" flowElement="//@componentInstance.2/@flowSpecification.1 //@connectionInstance.5 //@componentInstance.4/@flowSpecification.5">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.20"/>
   </endToEndFlow>
-  <endToEndFlow name="road_NetworkConditionsintoTraffMgmtCenter" flowElement="//@componentInstance.2/@flowSpecification.1 //@connectionInstance.6 //@componentInstance.4/@flowSpecification.5">
+  <endToEndFlow name="road_NetpwrokConditionsToTransportInfoCenter" flowElement="//@componentInstance.4/@flowSpecification.12 //@connectionInstance.15 //@componentInstance.6/@flowSpecification.0">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.21"/>
   </endToEndFlow>
-  <endToEndFlow name="road_NetpwrokConditionsToTransportInfoCenter" flowElement="//@componentInstance.4/@flowSpecification.12 //@connectionInstance.17 //@componentInstance.6/@flowSpecification.0">
+  <endToEndFlow name="vehicle_controlevent_locationMotion" flowElement="//@componentInstance.9/@flowSpecification.0 //@connectionInstance.24 //@componentInstance.8/@flowSpecification.2">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.22"/>
   </endToEndFlow>
-  <endToEndFlow name="vehicle_controlevent_locationMotion" flowElement="//@componentInstance.9/@flowSpecification.0 //@connectionInstance.26 //@componentInstance.8/@flowSpecification.2">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="3">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="5">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
-    </ownedPropertyAssociation>
+  <endToEndFlow name="vehicle_controlevent_locationMotiontoRemObe" flowElement="//@componentInstance.8/@flowSpecification.7 //@connectionInstance.21 //@componentInstance.9/@flowSpecification.1">
     <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.23"/>
-  </endToEndFlow>
-  <endToEndFlow name="vehicle_controlevent_locationMotiontoRemObe" flowElement="//@componentInstance.8/@flowSpecification.7 //@connectionInstance.23 //@componentInstance.9/@flowSpecification.1">
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="../../../Plugin_Resources/Predeclared_Property_Sets/Communication_Properties.aadl#Communication_Properties.Latency"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RangeValue">
-          <minimum xsi:type="aadl2:IntegerLiteral" value="3">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </minimum>
-          <maximum xsi:type="aadl2:IntegerLiteral" value="5">
-            <unit href="../../../Plugin_Resources/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
-          </maximum>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
-    </ownedPropertyAssociation>
-    <endToEndFlow href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedEndToEndFlow.24"/>
   </endToEndFlow>
   <connectionInstance name="this_driver.driverInput_out -> this_vehicleOBE.driverInput_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.3" source="//@componentInstance.0/@featureInstance.0">
     <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.8/@featureInstance.3">
@@ -1252,22 +1196,17 @@
   </connectionInstance>
   <connectionInstance name="this_itsRoadwayEquipment.trafficFlowImgs_out -> this_traffMgmtCenter.trafficFlowImgs_in" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.1/@featureInstance.4">
     <connectionReference context="/" source="//@componentInstance.1/@featureInstance.4" destination="//@componentInstance.4/@featureInstance.0">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.18"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_itsRoadwayEquipment.rdwayWarnSysStat_out -> this_traffMgmtCenter.roadwayWarningSystemStatus_in" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.1" source="//@componentInstance.1/@featureInstance.5">
     <connectionReference context="/" source="//@componentInstance.1/@featureInstance.5" destination="//@componentInstance.4/@featureInstance.1">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.16"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_itsRoadwayEquipment.envSensData_out -> this_traffMgmtCenter.environmentSensorData_in" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.2" source="//@componentInstance.1/@featureInstance.6">
     <connectionReference context="/" source="//@componentInstance.1/@featureInstance.6" destination="//@componentInstance.4/@featureInstance.2">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.14"/>
-    </connectionReference>
-  </connectionInstance>
-  <connectionInstance name="this_itsRoadwayEquipment.vehicleSignageLocalData_out -> this_roadsideEquipment.vehicleSignageLocalData_in" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.1" source="//@componentInstance.1/@featureInstance.7">
-    <connectionReference context="/" source="//@componentInstance.1/@featureInstance.7" destination="//@componentInstance.3/@featureInstance.1">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_itsRoadwayEquipment.DriverInfo_out -> this_driver.driverInfo_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.1" source="//@componentInstance.1/@featureInstance.8">
@@ -1277,17 +1216,12 @@
   </connectionInstance>
   <connectionInstance name="this_otherTrafficMgmtCenters.roadNetworkConditions_out -> this_traffMgmtCenter.roadNetworkConditions_in" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.5" source="//@componentInstance.2/@featureInstance.1">
     <connectionReference context="/" source="//@componentInstance.2/@featureInstance.1" destination="//@componentInstance.4/@featureInstance.5">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.23"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.21"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_roadsideEquipment.trafficSituationDataEnvData_out -> this_traffMgmtCenter.trafficEnvironmentSituationData_in" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.3" source="//@componentInstance.3/@featureInstance.4">
     <connectionReference context="/" source="//@componentInstance.3/@featureInstance.4" destination="//@componentInstance.4/@featureInstance.3">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
-    </connectionReference>
-  </connectionInstance>
-  <connectionInstance name="this_roadsideEquipment.trafSituationData_out -> this_itsRoadwayEquipment.trafficSituationData_in" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.3" source="//@componentInstance.3/@featureInstance.6">
-    <connectionReference context="/" source="//@componentInstance.3/@featureInstance.6" destination="//@componentInstance.1/@featureInstance.3">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_roadsideEquipment.qWarnInfo_out -> this_vehicleOBE.queueWarningInformation_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.0" source="//@componentInstance.3/@featureInstance.7">
@@ -1297,7 +1231,7 @@
   </connectionInstance>
   <connectionInstance name="this_roadsideEquipment.qWarnInfo_out -> this_traffMgmtCenter.queueWarnApplicationStatus_in" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.4" source="//@componentInstance.3/@featureInstance.7">
     <connectionReference context="/" source="//@componentInstance.3/@featureInstance.7" destination="//@componentInstance.4/@featureInstance.4">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_roadsideEquipment.vehSignData_out -> this_vehicleOBE.vehicleSignageData_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.1" source="//@componentInstance.3/@featureInstance.8">
@@ -1307,42 +1241,42 @@
   </connectionInstance>
   <connectionInstance name="this_traffMgmtCenter.trafficSensorCtrlVidSurvCtrl_out -> this_itsRoadwayEquipment.trafficSensorandVideoControl_in" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.4/@featureInstance.7">
     <connectionReference context="/" source="//@componentInstance.4/@featureInstance.7" destination="//@componentInstance.1/@featureInstance.0">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.19"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_traffMgmtCenter.roadWarnSystemCtrl_out -> this_itsRoadwayEquipment.rodwayWarningSystemControl_in" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.1" source="//@componentInstance.4/@featureInstance.8">
     <connectionReference context="/" source="//@componentInstance.4/@featureInstance.8" destination="//@componentInstance.1/@featureInstance.1">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.17"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_traffMgmtCenter.environmentSensorsCtrl_out -> this_itsRoadwayEquipment.environmentSensorControl_in" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.2" source="//@componentInstance.4/@featureInstance.9">
     <connectionReference context="/" source="//@componentInstance.4/@featureInstance.9" destination="//@componentInstance.1/@featureInstance.2">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.15"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.13"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_traffMgmtCenter.queueWarnApplicationInfo_out -> this_roadsideEquipment.queueWarningApplicationInformation_in" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.4/@featureInstance.10">
     <connectionReference context="/" source="//@componentInstance.4/@featureInstance.10" destination="//@componentInstance.3/@featureInstance.0">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.12"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_traffMgmtCenter.roadNetworkConditions_out -> this_otherTrafficMgmtCenters.roadNetworkConditions_in" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.4/@featureInstance.11">
     <connectionReference context="/" source="//@componentInstance.4/@featureInstance.11" destination="//@componentInstance.2/@featureInstance.0">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.22"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.20"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_traffMgmtCenter.roaddNetworkConditionsforTranspInfoCenter_out -> this_transInfoCenter.roadNetworkConditions_in" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.4/@featureInstance.12">
     <connectionReference context="/" source="//@componentInstance.4/@featureInstance.12" destination="//@componentInstance.6/@featureInstance.0">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.24"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.22"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_traffMgmtCenter.trafficOperationData_out -> this_traffOppPersonel.trafficOperationData_in" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.1" source="//@componentInstance.4/@featureInstance.13">
     <connectionReference context="/" source="//@componentInstance.4/@featureInstance.13" destination="//@componentInstance.5/@featureInstance.1">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.20"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.18"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_traffOppPersonel.trafficOperationInput_out -> this_traffMgmtCenter.trafficOperationInputp_in" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.6" source="//@componentInstance.5/@featureInstance.0">
     <connectionReference context="/" source="//@componentInstance.5/@featureInstance.0" destination="//@componentInstance.4/@featureInstance.6">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.21"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.19"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_vehicleDatabus.hostvehStatDrivInpInfo_out -> this_vehicleOBE.hostVehicleStatuseDriverInputInformation_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.4" source="//@componentInstance.7/@featureInstance.1">
@@ -1362,7 +1296,7 @@
   </connectionInstance>
   <connectionInstance name="this_vehicleOBE.vehCtrlEventLocMotion2_out -> this_remoteVehicleOBE.vehicleConttrolEventLocationMotion_in" complete="true" kind="portConnection" destination="//@componentInstance.9/@featureInstance.1" source="//@componentInstance.8/@featureInstance.7">
     <connectionReference context="/" source="//@componentInstance.8/@featureInstance.7" destination="//@componentInstance.9/@featureInstance.1">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.26"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.24"/>
     </connectionReference>
   </connectionInstance>
   <connectionInstance name="this_vehicleOBE.driverUpdates_out -> this_driver.driverUpdates_in" complete="true" kind="portConnection" destination="//@componentInstance.0/@featureInstance.2" source="//@componentInstance.8/@featureInstance.8">
@@ -1377,7 +1311,7 @@
   </connectionInstance>
   <connectionInstance name="this_remoteVehicleOBE.vehicleControlEventLocationMotion_out -> this_vehicleOBE.vehicleControlEventLocationMotion_in" complete="true" kind="portConnection" destination="//@componentInstance.8/@featureInstance.2" source="//@componentInstance.9/@featureInstance.0">
     <connectionReference context="/" source="//@componentInstance.9/@featureInstance.0" destination="//@componentInstance.8/@featureInstance.2">
-      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.25"/>
+      <connection xsi:type="aadl2:PortConnection" href="../CGDintegratedSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.23"/>
     </connectionReference>
   </connectionInstance>
   <systemOperationMode name="No Modes"/>

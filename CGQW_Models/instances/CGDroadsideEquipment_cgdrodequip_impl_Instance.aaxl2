@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="cgdrodequip_impl_Instance" category="system">
+  <featureInstance name="queueWarningApplicationInformation_in">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.0"/>
+  </featureInstance>
+  <featureInstance name="vehicleSignageLocalData_in">
+    <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.1"/>
+  </featureInstance>
+  <featureInstance name="veEnvironmentData_in">
+    <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.2"/>
+  </featureInstance>
+  <featureInstance name="veControlEventLocationMotion_in">
+    <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.3"/>
+  </featureInstance>
+  <featureInstance name="trafficSituationDataEnvData_out" direction="out">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.4"/>
+  </featureInstance>
+  <featureInstance name="queueWarnAppStatus_out" direction="out">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.5"/>
+  </featureInstance>
+  <featureInstance name="trafSituationData_out" direction="out">
+    <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.6"/>
+  </featureInstance>
+  <featureInstance name="qWarnInfo_out" direction="out">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.7"/>
+  </featureInstance>
+  <featureInstance name="vehSignData_out" direction="out">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="../../../Plugin_Resources/Data_Model.aadl#Data_Model.Data_Representation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="../../../Plugin_Resources/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../../../Plugin_Resources/Base_Types.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedDataPort.8"/>
+  </featureInstance>
+  <componentInstance name="rse_qwarning" category="system">
+    <componentInstance name="shortrange_info" category="process">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+      </featureInstance>
+      <componentInstance name="distributeInfo" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.distributeInfo.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.shortrange_info.impl"/>
+    </componentInstance>
+    <componentInstance name="vsafety_data" category="process">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+      </featureInstance>
+      <componentInstance name="rdfreewaycond" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.rdfreewaycond.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedProcessSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.vsafety_data.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.rse_qwarning.impl"/>
+  </componentInstance>
+  <componentInstance name="rse_envmonitoring" category="system">
+    <componentInstance name="invehicle_signdata" category="process">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+      </featureInstance>
+      <componentInstance name="createDataforVehicles" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.createDataforVehicles.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.invehicle_signdata.impl"/>
+    </componentInstance>
+    <componentInstance name="rdside_safdata" category="process">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.1"/>
+      </featureInstance>
+      <componentInstance name="opDataforRdSafety" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.opDataforRdSafety.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.rdside_safdata.impl"/>
+    </componentInstance>
+    <componentInstance name="vemissons" category="process">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.1"/>
+      </featureInstance>
+      <componentInstance name="collectVemssionsData" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.collectVemssionsData.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.vemissions.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.rse_envmonitoring.impl"/>
+  </componentInstance>
+  <componentInstance name="rse_trafmonitoring" category="system">
+    <componentInstance name="survdata" category="process">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.1"/>
+      </featureInstance>
+      <componentInstance name="disSurvData" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.disSurvData.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedProcessSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.survdata.impl"/>
+    </componentInstance>
+    <componentInstance name="inter_data" category="process">
+      <featureInstance name="data_in">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="data_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedDataPort.1"/>
+      </featureInstance>
+      <componentInstance name="intercomData" category="thread">
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.intercomData.impl"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedProcessSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.inter_data.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:SystemSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedSystemSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.rse_trafmonitoring.impl"/>
+  </componentInstance>
+  <flowSpecification name="system_qwarnapp_sink" source="//@featureInstance.0">
+    <flowSpecification href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.0"/>
+  </flowSpecification>
+  <flowSpecification name="system_vsignloc_sink" source="//@featureInstance.1">
+    <flowSpecification href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.1"/>
+  </flowSpecification>
+  <flowSpecification name="system_venv_sink" source="//@featureInstance.2">
+    <flowSpecification href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.2"/>
+  </flowSpecification>
+  <flowSpecification name="system_vcntrlloc_sink" source="//@featureInstance.3">
+    <flowSpecification href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.3"/>
+  </flowSpecification>
+  <flowSpecification name="system_trsituenv_source" destination="//@featureInstance.4">
+    <flowSpecification href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.4"/>
+  </flowSpecification>
+  <flowSpecification name="system_qwarnappstat_source" destination="//@featureInstance.5">
+    <flowSpecification href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.5"/>
+  </flowSpecification>
+  <flowSpecification name="system_trasitu_source" destination="//@featureInstance.6">
+    <flowSpecification href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.6"/>
+  </flowSpecification>
+  <flowSpecification name="system_qwarninfo_source" destination="//@featureInstance.7">
+    <flowSpecification href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.7"/>
+  </flowSpecification>
+  <flowSpecification name="system_vsign_source" destination="//@featureInstance.8">
+    <flowSpecification href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedFlowSpecification.8"/>
+  </flowSpecification>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.cgdrodequip.impl"/>
+</instance:SystemInstance>

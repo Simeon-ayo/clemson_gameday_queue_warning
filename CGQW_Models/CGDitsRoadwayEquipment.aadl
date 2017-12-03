@@ -1,18 +1,19 @@
 package CGDitsRoadwayEquipment
 public
 	with EMV2;
+	with Base_Types;
 	
 	system cgditsrequip
 		features
-			trafficSensorandVideoControl_in : in data port;
-			rodwayWarningSystemControl_in : in data port;
-			environmentSensorControl_in : in data port;
-			trafficSituationData_in : in data port;
-			trafficFlowImgs_out : out data port;
-			rdwayWarnSysStat_out : out data port;
-			envSensData_out : out data port;
-			vehicleSignageLocalData_out : out data port;
-			DriverInfo_out : out data port;
+			trafficSensorandVideoControl_in : in data port Base_Types::Float;
+			rodwayWarningSystemControl_in : in data port Base_Types::Float;
+			environmentSensorControl_in : in data port Base_Types::Float;
+			trafficSituationData_in : in data port Base_Types::Float;
+			trafficFlowImgs_out : out data port Base_Types::Boolean;
+			rdwayWarnSysStat_out : out data port Base_Types::Boolean;
+			envSensData_out : out data port Base_Types::Boolean;
+			vehicleSignageLocalData_out : out data port Base_Types::Boolean;
+			DriverInfo_out : out data port Base_Types::Integer;
 			
 		flows
 			system_sensorandVideovc_sink : flow sink trafficSensorandVideoControl_in;
@@ -59,6 +60,18 @@ public
 						DriverInfo_out.ValueError;
 		**};
 		
+		annex agree{**
+			assume "traffic Sensor and video control signal strength" : trafficSensorandVideoControl_in = 4.4;
+			assume "road way warning system control signal strength" : rodwayWarningSystemControl_in = 4.4;
+			assume "environmenta Sensor control signal strength" : environmentSensorControl_in = 4.4;
+			assume "traffic situation data signal strength" : trafficSituationData_in = 4.4;
+			
+			guarantee "send traffic flow information out when signal strength is above minimum" : trafficSensorandVideoControl_in < 4.4 => trafficFlowImgs_out;
+			guarantee "Give road warning information when signal strength is above minimum" : rodwayWarningSystemControl_in < 4.4 => trafficFlowImgs_out;
+			guarantee "disseminate environment data when signal strength is above minimum" : environmentSensorControl_in < 4.4 => trafficFlowImgs_out;
+			guarantee "transmit traffic situation data when signal strength is above minimum" : trafficSituationData_in < 4.4 => trafficFlowImgs_out;
+			**};		
+		
 	end cgditsrequip;
 
 	system implementation cgditsrequip.impl
@@ -66,6 +79,15 @@ public
 			rowarn : system rowarn.impl;
 			renmon : system renmon.impl;
 			rbsurv : system rbsurv.impl;
+		
+		annex agree{**
+			assert trafficFlowImgs_out = 
+			if trafficSensorandVideoControl_in < 4.5 or rodwayWarningSystemControl_in < 4.5 or
+			environmentSensorControl_in < 4.5 or trafficSituationData_in < 4.5  then
+				false
+			else
+				true;
+			**};
 			
 	end cgditsrequip.impl;
 	

@@ -4,7 +4,7 @@ system requirements qwarnsys_requirements for CGDintegratedSystem::CGDqueueWarni
 	val maximumSpeed=70.00
 	val minimumData=2.00
 	val thresholdQueue=12.00
-	val minimumStrength=4.65
+	val minimumStrength=4.50
 	val minwarnings=0.0
 	val minimumresponseTime=1.10
 	val maxallowedresponsetime=3.50

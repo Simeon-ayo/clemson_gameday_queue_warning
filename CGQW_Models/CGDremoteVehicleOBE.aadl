@@ -1,12 +1,13 @@
 package CGDremoteVehicleOBE
 public
 	with EMV2;
+	with Base_Types;
 	
 	system cgdremvehobe
 		
 		features
-			vehicleControlEventLocationMotion_out : out data port;
-			vehicleConttrolEventLocationMotion_in : in data port;
+			vehicleControlEventLocationMotion_out : out data port Base_Types::Boolean;
+			vehicleConttrolEventLocationMotion_in : in data port Base_Types::Float;
 			
 		flows
 			system_vcntrleventloc_source : flow source vehicleControlEventLocationMotion_out;
@@ -30,9 +31,22 @@ public
 					])
 			applies to vehicleConttrolEventLocationMotion_in.ValueError,vehicleControlEventLocationMotion_out.ValueError;						
 		**};
+		
+		annex agree{**
+			assume "vehicle conrol location motion event signal strength" : vehicleConttrolEventLocationMotion_in = 4.6;
+			
+			guarantee "send vehicle location motion event signl strength when signal strength is above minimum" : vehicleConttrolEventLocationMotion_in < 4.5 => vehicleControlEventLocationMotion_out;
+			**};	
 	end cgdremvehobe;
 	
 	system implementation cgdremvehobe.impl
+		annex agree{**
+			assert vehicleControlEventLocationMotion_out = 
+			if vehicleConttrolEventLocationMotion_in < 4.5 then
+				false
+			else
+				true;
+			**};
 	end cgdremvehobe.impl;
 	
 end CGDremoteVehicleOBE;

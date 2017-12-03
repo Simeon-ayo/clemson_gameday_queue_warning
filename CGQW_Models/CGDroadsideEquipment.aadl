@@ -1,18 +1,19 @@
 package CGDroadsideEquipment
 public
 	with EMV2;
+	with Base_Types;
 	
 	system cgdrodequip
 		features
-			queueWarningApplicationInformation_in : in data port;
+			queueWarningApplicationInformation_in : in data port Base_Types::Float;
 			vehicleSignageLocalData_in : in data port;
 			veEnvironmentData_in : in data port;
 			veControlEventLocationMotion_in : in data port;
-			trafficSituationDataEnvData_out: out data port;
-			queueWarnAppStatus_out : out data port;
+			trafficSituationDataEnvData_out: out data port Base_Types::Boolean;
+			queueWarnAppStatus_out : out data port Base_Types::Boolean;
 			trafSituationData_out : out data port;
-			qWarnInfo_out : out data port;
-			vehSignData_out : out data port;
+			qWarnInfo_out : out data port Base_Types::Boolean;
+			vehSignData_out : out data port Base_Types::Boolean;
 			
 		flows
 			system_qwarnapp_sink : flow sink queueWarningApplicationInformation_in;
@@ -60,6 +61,18 @@ public
 						trafSituationData_out.ValueError,vehSignData_out.ValueError;
 		**};
 		
+		annex agree{**
+			assume "queue warning information" : queueWarningApplicationInformation_in = 7.0;
+--			assume "vehicle signal location data" : vehicleSignageLocalData_in = 7.0;
+--			assume "vehicle environmental data" : veEnvironmentData_in = 7.0;
+--			assume "vehicle control event location motion" : veControlEventLocationMotion_in = 7.0;
+--			
+			guarantee "send queue warning information when number of vehicle is above minimum queue" : queueWarningApplicationInformation_in < 6.9 => queueWarnAppStatus_out;
+--			guarantee "update vehicle signage local data when number of vehicle is above minimum queue" : vehicleSignageLocalData_in < 6.9 => queueWarnAppStatus_out;
+--			guarantee "disseminate environment data when number of vehicle is above minimum queue" : veEnvironmentData_in < 6.9 => queueWarnAppStatus_out;
+--			guarantee "transmit vehicle event location when number of vehicle is above minimum queue" : veControlEventLocationMotion_in < 6.9 => queueWarnAppStatus_out;
+--			**};	
+--		
 	end cgdrodequip;
 	
 	system implementation cgdrodequip.impl
@@ -67,6 +80,14 @@ public
 			rse_qwarning : system rse_qwarning.impl;
 			rse_envmonitoring : system rse_envmonitoring.impl;
 			rse_trafmonitoring: system rse_trafmonitoring.impl;
+			
+		annex agree{**
+			assert queueWarnAppStatus_out = 
+			if queueWarningApplicationInformation_in < 7.0 then
+				false
+			else
+				true;
+			**};
 	end cgdrodequip.impl;
 	
 	system rse_qwarning
