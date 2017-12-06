@@ -1,12 +1,13 @@
 package CGDotherTrafficMgmtCenters
 public
 	with EMV2;
+	with Base_Types;
 	
 	system cgdothertrafmgmtcent
 		
 		features		
-		roadNetworkConditions_in : in data port;
-		roadNetworkConditions_out : out data port;
+		roadNetworkConditions_in : in data port Base_Types::Float;
+		roadNetworkConditions_out : out data port Base_Types::Boolean;
 		
 		flows
 		rdNetcond_sink : flow sink roadNetworkConditions_in;
@@ -28,11 +29,24 @@ public
 					([failure => "ValueError";	
 				  	description => "No data , Invalid date or Late data from Traffic Management Center";
 					])
-			applies to roadNetworkConditions_in.ValueError,roadNetworkConditions_out.ValueError;						
+			applies to roadNetworkConditions_in.ValueError,roadNetworkConditions_out.ValueError;			
+		**};
+		
+		annex agree{**
+			assume "response generation time" : roadNetworkConditions_in = 1.10;
+			
+			guarantee "response generation time greater than minimum response time" : roadNetworkConditions_in < 1.10 => roadNetworkConditions_out;	
 		**};
 		
 	end cgdothertrafmgmtcent;
 	
 	system implementation cgdothertrafmgmtcent.impl
+		annex agree{**
+			assert roadNetworkConditions_out = 
+			if roadNetworkConditions_in <= 1.0 then
+				true
+			else
+				false;
+			**};
 	end cgdothertrafmgmtcent.impl;
 end CGDotherTrafficMgmtCenters;
