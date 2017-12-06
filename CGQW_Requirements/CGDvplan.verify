@@ -29,6 +29,10 @@ verification plan cgdvplan for qwarnsys_requirements
 	]
 
 	claim accurate_system [
+		activities
+			accuracy : Plugins.PortDataConsistency()
+			   [ category Quality.State ]
+			noOfWarnings : Resolute.verifyAccurateSpeed(maximumSpeed, minimunQueue) [ category Quality.State ]
 	]
 
 	claim reliable_system [

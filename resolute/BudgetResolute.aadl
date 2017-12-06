@@ -43,6 +43,12 @@ annex Resolute {**
 	let actuals : real = AddAllBudgets(self); 
 	(actuals <= max) or fail ** self "All weight sum " actuals%kg " over budget " max%kg **  
 	
+	AssureRecursivetotals1(self : component, max :real, min :real) <=
+	** "sum of all subcomponent weights " actuals%kg " within budget " max%kg **
+	let actuals : real = AddAllBudgets(self); 
+	(actuals <= max) or fail ** self "All weight sum " actuals%kg " over budget " max%kg **  
+	
+	
 	SCSReq1VA1SubcomponentsHaveWeight(self : component) <=
 	** "Ass1: All subcomponents have gross weight" **
 	let ratio : int = SubcomponentWeightBudgetCoveragePercent(self);

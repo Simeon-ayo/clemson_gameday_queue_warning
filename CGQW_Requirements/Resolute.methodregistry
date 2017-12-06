@@ -10,6 +10,11 @@ verification methods Resolute [
 	validation validateWeightBudgetCoveragePercent()
 	]
 	
+	method verifyAccurateSpeed(maximumSpeed: real, minimunQueue: real): "Verify accurate speed is recommended" [
+		resolute  AssureRecursivetotals1 
+	validation validateWeightBudgetCoveragePercent()
+	]
+	
 	method verifyWarnings ( numberOfWarnings: real ) : "Verify signalStrength of vehicle OBE and sensors do not go below minimum" [
 		resolute  AssureRecursivetotals 
 	validation validateWeightBudgetCoveragePercent()
