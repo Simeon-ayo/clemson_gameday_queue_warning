@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="rse_envmonitoring_impl_Instance" category="system">
+  <componentInstance name="invehicle_signdata" category="process">
+    <featureInstance name="data_in">
+      <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="createDataforVehicles" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.createDataforVehicles.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.invehicle_signdata.impl"/>
+  </componentInstance>
+  <componentInstance name="rdside_safdata" category="process">
+    <featureInstance name="data_in">
+      <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="opDataforRdSafety" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.opDataforRdSafety.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.rdside_safdata.impl"/>
+  </componentInstance>
+  <componentInstance name="vemissons" category="process">
+    <featureInstance name="data_in">
+      <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="data_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="collectVemssionsData" category="thread">
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.collectVemssionsData.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../CGDroadsideEquipment.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedProcessSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.vemissions.impl"/>
+  </componentInstance>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../CGDroadsideEquipment.aadl#CGDroadsideEquipment.rse_envmonitoring.impl"/>
+</instance:SystemInstance>
